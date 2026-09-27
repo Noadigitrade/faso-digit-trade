@@ -2087,6 +2087,8 @@ async function verifyAdmin() {
 
   showAdmin();
 
+  subscribeToPush();
+
   await loadEverything();
 
   return true;
@@ -4438,23 +4440,108 @@ if ('serviceWorker' in navigator) {
 
 
 /* ============================================================
-   TEST TEMPORAIRE - BADGE
-   (à retirer une fois le test terminé)
+   PUSH - ABONNEMENT
 ============================================================ */
 
-if ('setAppBadge' in navigator) {
+const VAPID_PUBLIC_KEY =
+  'BG_8IQum_X1gchhu5ewLXFYNBTRDHvwuqBnTI6eRv97wNOsfm-D4CZOsgIbTlje1j-KRHcpW4hyg8A0D-k22v4I';
 
-  navigator.setAppBadge(7)
-    .then(function() {
-      alert('Badge défini avec succès !');
-    })
-    .catch(function(err) {
-      alert('Erreur badge : ' + err.message);
-    });
 
-} else {
+function urlBase64ToUint8Array(base64String) {
 
-  alert('setAppBadge non supporté sur ce navigateur/launcher');
+  const padding =
+    '='.repeat(
+      (4 - base64String.length % 4) % 4
+    );
+
+  const base64 =
+    (base64String + padding)
+      .replace(/-/g, '+')
+      .replace(/_/g, '/');
+
+  const rawData = atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+
+  return outputArray;
+
+}
+
+
+async function subscribeToPush() {
+
+  if (
+    !('serviceWorker' in navigator) ||
+    !('PushManager' in window)
+  ) {
+
+    console.warn(
+      'Push non supporté sur ce navigateur.'
+    );
+
+    return;
+
+  }
+
+
+  try {
+
+    const permission =
+      await Notification.requestPermission();
+
+    if (permission !== 'granted') {
+
+      console.warn(
+        'Permission de notification refusée.'
+      );
+
+      return;
+
+    }
+
+
+    const registration =
+      await navigator.serviceWorker.ready;
+
+    let subscription =
+      await registration.pushManager.getSubscription();
+
+    if (!subscription) {
+
+      subscription =
+        await registration.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey:
+            urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
+        });
+
+    }
+
+
+    const subJson = subscription.toJSON();
+
+    await supabaseClient
+      .from('push_subscriptions')
+      .upsert(
+        {
+          endpoint: subJson.endpoint,
+          p256dh: subJson.keys.p256dh,
+          auth: subJson.keys.auth
+        },
+        { onConflict: 'endpoint' }
+      );
+
+  } catch (error) {
+
+    console.error(
+      'Erreur abonnement push :',
+      error
+    );
+
+  }
 
 }
 
