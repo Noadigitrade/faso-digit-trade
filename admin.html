@@ -4436,6 +4436,28 @@ if ('serviceWorker' in navigator) {
 
 }
 
+
+/* ============================================================
+   TEST TEMPORAIRE - BADGE
+   (à retirer une fois le test terminé)
+============================================================ */
+
+if ('setAppBadge' in navigator) {
+
+  navigator.setAppBadge(7)
+    .then(function() {
+      alert('Badge défini avec succès !');
+    })
+    .catch(function(err) {
+      alert('Erreur badge : ' + err.message);
+    });
+
+} else {
+
+  alert('setAppBadge non supporté sur ce navigateur/launcher');
+
+}
+
 </script>
 
 </body>
