@@ -4,7 +4,7 @@
 // cache les fichiers statiques pour un chargement plus rapide.
 // ============================================================
 
-const CACHE_NAME = 'faso-digit-trade-v3';
+const CACHE_NAME = 'faso-digit-trade-v4';
 
 const STATIC_ASSETS = [
   './index.html',
@@ -78,4 +78,80 @@ self.addEventListener('fetch', (event) => {
         caches.match(event.request)
       )
   );
+});
+
+
+// ============================================================
+// NOTIFICATIONS PUSH (nouvelles commandes / inscriptions - admin)
+// ============================================================
+
+self.addEventListener('push', (event) => {
+
+  let payload = {};
+
+  try {
+    payload = event.data ? event.data.json() : {};
+  } catch (e) {
+    payload = {
+      title: 'FASO DIGIT TRADE',
+      body: event.data ? event.data.text() : ''
+    };
+  }
+
+  const title =
+    payload.title || 'FASO DIGIT TRADE';
+
+  const options = {
+    body: payload.body || '',
+    icon: './icons/icon-192.png',
+    badge: './icons/icon-192.png',
+    data: payload.url || './admin.html'
+  };
+
+  event.waitUntil(
+    (async () => {
+
+      await self.registration.showNotification(title, options);
+
+      if (
+        'setAppBadge' in self.registration &&
+        typeof payload.badgeCount === 'number'
+      ) {
+
+        try {
+          await self.registration.setAppBadge(payload.badgeCount);
+        } catch (e) {}
+
+      }
+
+    })()
+  );
+
+});
+
+
+self.addEventListener('notificationclick', (event) => {
+
+  event.notification.close();
+
+  const targetUrl = event.notification.data || './admin.html';
+
+  event.waitUntil(
+    clients
+      .matchAll({ type: 'window', includeUncontrolled: true })
+      .then((clientList) => {
+
+        for (const client of clientList) {
+          if (client.url.includes('admin.html') && 'focus' in client) {
+            return client.focus();
+          }
+        }
+
+        if (clients.openWindow) {
+          return clients.openWindow(targetUrl);
+        }
+
+      })
+  );
+
 });
