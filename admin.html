@@ -1628,6 +1628,7 @@ let currentAdmin = null;
 let adminProfile = null;
 
 let allOrders = [];
+let orderUserNames = {};
 let allUsers = [];
 let allDisputes = [];
 
@@ -3247,6 +3248,45 @@ async function loadOrders() {
         ? data
         : [];
 
+
+    orderUserNames = {};
+
+    const userIds =
+      Array.from(
+        new Set(
+          allOrders
+            .map(o => o.user_id)
+            .filter(Boolean)
+        )
+      );
+
+    if (userIds.length) {
+
+      const {
+        data: profilesData,
+        error: profilesError
+      } =
+        await supabaseClient
+          .from('profiles')
+          .select('id, full_name')
+          .in('id', userIds);
+
+      if (profilesError) {
+        console.error(
+          'Erreur profils commandes:',
+          profilesError
+        );
+      } else {
+
+        (profilesData || []).forEach(
+          p => {
+            orderUserNames[p.id] =
+              p.full_name || '';
+          }
+        );
+      }
+    }
+
     renderOrders();
     renderRecentOrders();
 
@@ -3391,6 +3431,10 @@ function renderOrders() {
               <span class="status ${escapeHtml(statusClass(status))}">
                 ${escapeHtml(statusLabel(status))}
               </span>
+            </div>
+
+            <div style="margin-top:6px;color:#7a9584;font-size:13px;">
+              👤 ${escapeHtml(orderUserNames[order.user_id] || 'Client inconnu')}
             </div>
 
             <div style="margin-top:10px;">
@@ -3813,6 +3857,10 @@ function renderRecentOrders() {
                 : order.amount_cfa
             )}
             FCFA
+
+            <br>
+
+            👤 ${escapeHtml(orderUserNames[order.user_id] || 'Client inconnu')}
 
             <br>
 
