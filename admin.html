@@ -3268,15 +3268,42 @@ function renderOrders() {
             0
           );
 
+        const storedFee =
+          order.fee_usdt;
+
+        const storedNet =
+          order.net_usdt;
+
+        const hasStoredFee =
+          storedFee !== null &&
+          storedFee !== undefined &&
+          storedFee !== '' &&
+          Number.isFinite(Number(storedFee));
+
+        const hasStoredNet =
+          storedNet !== null &&
+          storedNet !== undefined &&
+          storedNet !== '' &&
+          Number.isFinite(Number(storedNet));
+
+        // Frais enregistrés à la création de la commande.
+        // Repli sur les paramètres actuels uniquement pour les anciennes
+        // commandes qui n'ont pas de frais enregistré.
         const networkFee =
-          Number(
-            networkLabel(order.network) === 'TRC20'
-              ? (settings?.trc20_fee_usdt ?? 0)
-              : (settings?.bp20_fee_usdt ?? 0)
-          );
+          hasStoredFee
+            ? Number(storedFee)
+            : Number(
+                networkLabel(order.network) === 'TRC20'
+                  ? (settings?.trc20_fee_usdt ?? 0)
+                  : networkLabel(order.network) === 'BEP20'
+                    ? (settings?.bp20_fee_usdt ?? 0)
+                    : 0
+              );
 
         const netUsdt =
-          Math.max(amountUsdt - networkFee, 0);
+          hasStoredNet
+            ? Number(storedNet)
+            : Math.max(amountUsdt - networkFee, 0);
 
         return `
           <div class="order-detail" style="margin-bottom:12px;">
