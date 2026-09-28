@@ -1886,17 +1886,29 @@ function networkLabel(network) {
   const value =
     String(network)
       .trim()
-      .toUpperCase();
+      .toLowerCase();
 
-  if (value === 'TRC20') {
+  if (value === 'trc20') {
     return 'TRC20';
   }
 
   if (
-    value === 'BEP20' ||
-    value === 'BP20'
+    value === 'bep20' ||
+    value === 'bp20'
   ) {
     return 'BEP20';
+  }
+
+  if (value === 'plasma') {
+    return 'Plasma (USDT0)';
+  }
+
+  if (value === 'uid') {
+    return 'ID Binance';
+  }
+
+  if (value === 'id') {
+    return 'UID OKX';
   }
 
   return escapeHtml(network);
