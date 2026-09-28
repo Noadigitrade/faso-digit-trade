@@ -1,96 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1798065757857036');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1798065757857036&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Achat et vente de USDT au Burkina Faso, Côte d'Ivoire, Mali, Sénégal | FASO DIGIT TRADE</title>
+  <title>NOA DIGIT TRADE — ADMIN</title>
 
-  <meta
-    name="description"
-    content="Achetez et vendez vos USDT facilement au Burkina Faso, en Côte d'Ivoire, au Mali et au Sénégal. Paiement via Orange Money et Wave, taux compétitifs, réseaux TRC20 et BEP20."
-  >
+  <meta name="theme-color" content="#0757d9">
 
-  <meta name="theme-color" content="#07d953">
-
-  <link rel="canonical" href="https://noa-digit-trade.pages.dev/">
-  <meta name="robots" content="index, follow">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FinancialService",
-    "name": "FASO DIGIT TRADE",
-    "url": "https://noa-digit-trade.pages.dev/",
-    "description": "Achetez et vendez vos USDT facilement au Burkina Faso, en Côte d'Ivoire, au Mali et au Sénégal. Paiement via Orange Money et Wave, taux compétitifs, réseaux TRC20 et BEP20.",
-    "image": "https://noa-digit-trade.pages.dev/og-image.png",
-    "areaServed": [
-      { "@type": "Country", "name": "Burkina Faso" },
-      { "@type": "Country", "name": "Côte d'Ivoire" },
-      { "@type": "Country", "name": "Mali" },
-      { "@type": "Country", "name": "Sénégal" }
-    ],
-    "serviceType": "Achat et vente de USDT (cryptomonnaie)"
-  }
-  </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "FASO DIGIT TRADE",
-  "alternateName": "FASO DIGIT TRADE",
-  "url": "https://noa-digit-trade.pages.dev/"
-}
-</script>
-  <!-- Open Graph / partage WhatsApp, Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Achat & vente de USDT au Burkina Faso, Côte d'Ivoire, Mali, Sénégal | FASO DIGIT TRADE">
-  <meta property="og:description" content="Achetez et vendez vos USDT facilement au Burkina Faso, en Côte d'Ivoire, au Mali et au Sénégal. Paiement via Orange Money et Wave.">
-  <meta property="og:image" content="https://noa-digit-trade.pages.dev/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://noa-digit-trade.pages.dev/">
-  <meta property="og:locale" content="fr_FR">
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Achat & vente de USDT au Burkina Faso, Côte d'Ivoire, Mali, Sénégal | FASO DIGIT TRADE">
-  <meta name="twitter:description" content="Achetez et vendez vos USDT facilement au Burkina Faso, en Côte d'Ivoire, au Mali et au Sénégal.">
-  <meta name="twitter:image" content="https://noa-digit-trade.pages.dev/og-image.png">
-
-  <!-- PWA -->
-
-  <link rel="manifest" href="manifest.json">
-
-  <link rel="icon" href="icons/icon-192.png">
-
+  <link rel="manifest" href="admin-manifest.json">
+  <link rel="icon" href="icons/icon-192-1.png">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-
-  <meta name="mobile-web-app-capable" content="yes">
-
-  <meta name="apple-mobile-web-app-capable" content="yes">
-
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-  <meta name="apple-mobile-web-app-title" content="FASO DIGIT">
 
   <style>
     * {
@@ -101,8 +21,8 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f4fbf7;
-      color: #173321;
+      background: #f4f7fb;
+      color: #172033;
       min-height: 100vh;
     }
 
@@ -117,240 +37,338 @@
       cursor: pointer;
     }
 
-    .app {
-      width: 100%;
-      max-width: 520px;
-      margin: auto;
+    button:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* =====================================================
+       LOGIN
+    ====================================================== */
+
+    #loginScreen {
       min-height: 100vh;
-      background: #f4fbf7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
 
-    .header {
-      background: linear-gradient(135deg, #06cc4e, #08e85a);
-      color: #fff;
-      padding: 28px 20px 32px;
-      border-radius: 0 0 28px 28px;
+    .login-card {
+      width: 100%;
+      max-width: 430px;
+      background: #fff;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 15px 50px rgba(18,46,84,.10);
     }
 
-    .brand {
+    .admin-logo {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 18px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg,#064dcc,#0878e8);
+      color: white;
+      font-size: 30px;
+      font-weight: 900;
+    }
+
+    .login-title {
+      text-align: center;
       font-size: 25px;
-      font-weight: 800;
-      letter-spacing: .3px;
+      font-weight: 900;
     }
 
-    .subtitle {
-      margin-top: 7px;
+    .login-subtitle {
+      text-align: center;
+      color: #7b8493;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 8px;
+      margin-bottom: 25px;
+    }
+
+    /* =====================================================
+       APP
+    ====================================================== */
+
+    #adminApp {
+      min-height: 100vh;
+    }
+
+    .admin-header {
+      background: linear-gradient(135deg,#064dcc,#0878e8);
+      color: white;
+      padding: 20px max(20px,calc((100% - 1200px)/2)) 24px;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-area h1 {
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .brand-area p {
+      margin-top: 5px;
+      font-size: 13px;
       opacity: .9;
-      font-size: 14px;
     }
 
-    .country-badge {
+    .admin-badge {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      margin-top: 18px;
-      padding: 8px 13px;
-      border-radius: 30px;
+      margin-top: 10px;
+      padding: 7px 11px;
       background: rgba(255,255,255,.16);
-      font-size: 13px;
-      font-weight: 600;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 800;
     }
 
-    .content {
-      padding: 20px 16px 100px;
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .notif-bell-btn {
+      position: relative;
+      background: rgba(255,255,255,.16);
+      border: none;
+      border-radius: 12px;
+      width: 42px;
+      height: 42px;
+      font-size: 19px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .notif-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: #e53935;
+      color: white;
+      font-size: 11px;
+      font-weight: 900;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+    }
+
+    .notif-badge.hidden {
+      display: none;
+    }
+
+    .notif-panel {
+      position: fixed;
+      top: 70px;
+      right: 16px;
+      width: min(340px, calc(100vw - 32px));
+      max-height: 60vh;
+      overflow-y: auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,.2);
+      z-index: 999;
+    }
+
+    .notif-panel.hidden {
+      display: none;
+    }
+
+    .notif-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-bottom: 1px solid #eef1f5;
+    }
+
+    .notif-panel-header button {
+      background: none;
+      border: none;
+      color: #0757d9;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .notif-list {
+      padding: 6px;
+    }
+
+    .notif-item {
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .notif-item:hover {
+      background: #f5f7fb;
+    }
+
+    .notif-item-title {
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    .notif-item-time {
+      color: #98a2b3;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    .notif-empty {
+      padding: 24px 16px;
+      text-align: center;
+      color: #98a2b3;
+      font-size: 13px;
+    }
+
+    .logout-header {
+      border: none;
+      background: rgba(255,255,255,.15);
+      color: white;
+      border-radius: 11px;
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .admin-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 22px 18px 80px;
+    }
+
+    /* =====================================================
+       DASHBOARD
+    ====================================================== */
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card,
+    .card {
+      background: white;
+      box-shadow: 0 7px 25px rgba(18,46,84,.07);
+    }
+
+    .stat-card {
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .stat-label {
+      color: #7b8493;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .stat-value {
+      margin-top: 9px;
+      font-size: 26px;
+      font-weight: 900;
+      color: #0757d9;
     }
 
     .card {
-      background: #fff;
       border-radius: 20px;
       padding: 20px;
-      margin-bottom: 16px;
-      box-shadow: 0 7px 25px rgba(18,84,42,.07);
+      margin-bottom: 18px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 18px;
     }
 
     .card-title {
       font-size: 19px;
-      font-weight: 800;
-      margin-bottom: 5px;
-    }
-
-    .card-description {
-      color: #7a9584;
-      font-size: 13px;
-      line-height: 1.5;
-      margin-bottom: 18px;
-    }
-
-    .auth-tabs,
-    .exchange-tabs {
-      display: flex;
-      background: #edf8f2;
-      border-radius: 14px;
-      padding: 4px;
-      margin-bottom: 20px;
-    }
-
-    .auth-tab,
-    .exchange-tab {
-      flex: 1;
-      border: none;
-      background: transparent;
-      padding: 11px;
-      border-radius: 11px;
-      font-weight: 700;
-      color: #7b9384;
-    }
-
-    .auth-tab.active,
-    .exchange-tab.active {
-      background: #fff;
-      color: #07d953;
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
-    }
-
-    #loginTab.active,
-    #buyTab.active {
-      color: #168447;
-    }
-
-    #registerTab.active,
-    #sellTab.active {
-      color: #c62828;
-    }
-
-    .phone-input-wrapper {
-      display: flex;
-      align-items: stretch;
-      gap: 8px;
-    }
-
-    .phone-prefix {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 10px;
-      border: 1px solid #e0efe7;
-      border-radius: 12px;
-      background: #f5fbf8;
-      font-weight: 700;
-      color: #345440;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-
-    select.phone-prefix {
-      width: auto !important;
-      flex: 0 0 auto;
-    }
-
-    .phone-input-wrapper input {
-      flex: 1 1 auto;
-      min-width: 100px;
-      width: auto !important;
-    }
-
-    .balance-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: 1px solid #e0efe7;
-      border-radius: 14px;
-      padding: 12px 16px;
-      margin-bottom: 12px;
-      background: #f5fffa;
-      font-size: 14px;
-    }
-
-    .balance-box strong {
-      color: #07d953;
-    }
-
-    .balance-box.insufficient {
-      background: #fee9e9;
-      border-color: #f3b9b9;
-    }
-
-    .balance-box.insufficient strong {
-      color: #c62828;
-    }
-
-    .balance-alert {
-      display: none;
-      background: #fee9e9;
-      border: 1px solid #f3b9b9;
-      color: #c62828;
-      border-radius: 14px;
-      padding: 12px 16px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .balance-alert.visible {
-      display: block;
-    }
-
-    .copy-btn-inline {
-      background: #eafbf2;
-      color: #07d953;
-      border: none;
-      border-radius: 12px;
-      padding: 10px 14px;
-      font-weight: 700;
-      font-size: 13px;
-      margin-top: 10px;
-      width: 100%;
-    }
-
-    .binance-transfer-box {
-      border: 1px solid #f3e0a8;
-      background: #fffaf0;
-      border-radius: 16px;
-      padding: 14px 16px;
-      margin-top: 4px;
-    }
-
-    .binance-transfer-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .binance-logo {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 22px;
-      height: 22px;
-      background: #F0B90B;
-      color: #1e1e1e;
-      transform: rotate(45deg);
-      border-radius: 5px;
-      font-size: 11px;
       font-weight: 900;
     }
 
-    .binance-logo span {
-      transform: rotate(-45deg);
+    .card-description {
+      color: #7b8493;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 5px;
     }
 
-    .auth-form {
+    /* =====================================================
+       NAVIGATION
+    ====================================================== */
+
+    .admin-nav {
+      display: flex;
+      gap: 7px;
+      overflow-x: auto;
+      background: white;
+      border-radius: 16px;
+      padding: 6px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 20px rgba(18,46,84,.06);
+    }
+
+    .admin-nav button {
+      flex: 1;
+      min-width: 120px;
+      border: none;
+      background: transparent;
+      color: #727d8d;
+      padding: 11px 12px;
+      border-radius: 11px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .admin-nav button.active {
+      background: #edf5ff;
+      color: #0757d9;
+    }
+
+    .admin-page {
       display: none;
     }
 
-    .forgot-password-link {
-      text-align: right;
-      color: #07d953;
-      font-weight: 700;
-      margin-top: 8px;
-      cursor: pointer;
-    }
-
-    .auth-form.active {
+    .admin-page.active {
       display: block;
     }
+
+    /* =====================================================
+       FORMULAIRES
+    ====================================================== */
 
     .field {
       margin-bottom: 15px;
@@ -358,83 +376,67 @@
 
     .field label {
       display: block;
-      font-size: 13px;
-      font-weight: 700;
       margin-bottom: 7px;
-      color: #3c5846;
+      color: #3c4658;
+      font-size: 13px;
+      font-weight: 800;
     }
 
     .field input,
     .field select,
     .field textarea {
       width: 100%;
-      border: 1px solid #dcede2;
-      background: #fafffc;
-      border-radius: 13px;
-      padding: 13px 14px;
+      border: 1px solid #dce3ed;
+      background: #fafcff;
+      border-radius: 12px;
+      padding: 12px 13px;
       outline: none;
-      color: #173321;
+      color: #172033;
     }
 
     .field input:focus,
     .field select:focus,
     .field textarea:focus {
-      border-color: #08e85a;
-      box-shadow: 0 0 0 3px rgba(8,232,90,.09);
+      border-color: #0878e8;
+      box-shadow: 0 0 0 3px rgba(8,120,232,.09);
     }
 
-    .field textarea {
-      resize: vertical;
-      min-height: 90px;
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 15px;
     }
 
-    .password-wrapper {
-      position: relative;
-      width: 100%;
+    .form-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
     }
 
-    .password-wrapper input {
-      padding-right: 52px;
-    }
-
-    .password-toggle {
-      position: absolute;
-      top: 50%;
-      right: 8px;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      border: none;
-      background: transparent;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 19px;
-      color: #668571;
-    }
+    /* =====================================================
+       BOUTONS
+    ====================================================== */
 
     .btn {
-      width: 100%;
       border: none;
-      border-radius: 14px;
-      padding: 14px 16px;
+      border-radius: 12px;
+      padding: 12px 15px;
       font-weight: 800;
-      transition: .2s;
     }
 
     .btn-primary {
-      background: #07d953;
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: #06b646;
+      background: #0757d9;
+      color: white;
     }
 
     .btn-secondary {
-      background: #eafbf2;
-      color: #07d953;
+      background: #eaf1fb;
+      color: #0757d9;
+    }
+
+    .btn-success {
+      background: #e7f8ee;
+      color: #168447;
     }
 
     .btn-danger {
@@ -442,255 +444,209 @@
       color: #c62828;
     }
 
-    .btn-success {
-      background: #e8f8ef;
-      color: #168447;
+    .btn-small {
+      padding: 8px 10px;
+      font-size: 11px;
     }
 
-    .btn+.btn {
-      margin-top: 10px;
-    }
+    /* =====================================================
+       PARAMETRES
+    ====================================================== */
 
-    .amount-box {
-      border: 1px solid #e0efe7;
-      border-radius: 17px;
+    .setting-box {
+      border: 1px solid #e2e7ef;
+      border-radius: 15px;
       padding: 16px;
-      margin-bottom: 12px;
-      background: #fbfefc;
+      background: #fbfcfe;
     }
 
-    .amount-label {
-      color: #779482;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .amount-input {
-      width: 100%;
-      border: none;
-      outline: none;
-      background: transparent;
-      font-size: 29px;
-      font-weight: 800;
-      color: #173321;
-    }
-
-    .amount-unit {
-      color: #07d953;
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .network-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .network-option {
-      border: 2px solid #e0efe7;
-      background: #fff;
-      border-radius: 14px;
-      padding: 14px 10px;
-      text-align: center;
-    }
-
-    .network-option.active {
-      border-color: #07d953;
-      background: #f0fff7;
-    }
-
-    .network-select {
-      width: 100%;
-      margin-top: 10px;
-      padding: 14px 12px;
-      border: 2px solid #e0efe7;
-      border-radius: 14px;
-      background: #fff;
-      color: #123a21;
+    .setting-title {
       font-size: 15px;
-      font-weight: 700;
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230757d9' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
-      background-repeat: no-repeat;
-      background-position: right 14px center;
-      background-size: 18px;
-    }
-
-    .network-select:focus {
-      outline: none;
-      border-color: #07d953;
-    }
-
-    .payment-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .payment-option {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 10px;
-      border: 2px solid transparent;
-      border-radius: 14px;
-      cursor: pointer;
-      transition: transform 0.1s ease;
-    }
-
-    .payment-option.active {
-      transform: scale(1.03);
-      box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px rgba(7,217,83,0.5);
-    }
-
-    .payment-check {
-      display: none;
       font-weight: 900;
+      margin-bottom: 13px;
     }
 
-    .payment-option.active .payment-check {
-      display: inline;
-    }
-
-    .network-name {
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .network-fee {
-      margin-top: 5px;
-      color: #7d9686;
+    .setting-help {
       font-size: 12px;
-    }
-
-    .summary {
-      background: #f5fdf9;
-      border-radius: 16px;
-      padding: 16px;
-      margin-top: 15px;
-    }
-
-    .summary-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 8px 0;
-      font-size: 14px;
-    }
-
-    .summary-row span:first-child {
-      color: #738e7d;
-    }
-
-    .summary-row strong {
-      text-align: right;
-    }
-
-    .summary-total {
-      border-top: 1px solid #dcede2;
+      color: #7b8493;
+      line-height: 1.5;
       margin-top: 7px;
-      padding-top: 13px;
-      font-size: 17px;
     }
 
-    .summary-total strong {
-      color: #07d953;
-    }
-
-    .info-box {
-      background: #eefff6;
-      border-left: 4px solid #08e85a;
-      padding: 13px;
-      border-radius: 10px;
-      font-size: 13px;
-      line-height: 1.5;
-      color: #426a51;
-      margin-bottom: 15px;
-    }
-
-    .warning-box {
-      background: #fff8e7;
-      border-left: 4px solid #f2a900;
-      padding: 13px;
-      border-radius: 10px;
-      font-size: 13px;
-      line-height: 1.5;
-      color: #69531f;
-      margin-bottom: 15px;
-    }
-
-    .error-box {
-      background: #feecec;
-      border-left: 4px solid #c62828;
-      padding: 13px;
-      border-radius: 10px;
-      font-size: 13px;
-      line-height: 1.5;
-      color: #a51f1f;
-      margin-bottom: 15px;
-    }
-
-    .user-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      background: #fff;
-      padding: 14px 16px;
-      border-radius: 16px;
-      margin-bottom: 16px;
-      box-shadow: 0 5px 18px rgba(18,84,42,.06);
-    }
-
-    .user-name {
-      font-weight: 800;
-    }
-
-    .user-country {
-      color: #7c9585;
+    .save-info {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      background: #f5f8fd;
+      color: #667085;
       font-size: 12px;
-      margin-top: 3px;
+      line-height: 1.5;
     }
 
-    .logout-btn {
-      border: none;
-      background: #f0f7f3;
-      color: #597764;
-      border-radius: 10px;
-      padding: 9px 12px;
-      font-size: 12px;
-      font-weight: 700;
+    /* =====================================================
+       TABLEAUX
+    ====================================================== */
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
     }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th {
+      text-align: left;
+      background: #f5f8fd;
+      color: #667085;
+      padding: 11px 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    td {
+      padding: 12px 10px;
+      border-bottom: 1px solid #edf0f4;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+
+    /* =====================================================
+       CARTES DE COMMANDES (ADMIN)
+    ====================================================== */
 
     .order-card {
-      border: 1px solid #e2efe8;
-      border-radius: 15px;
+      border: 1px solid #e2e7ef;
+      border-radius: 16px;
       padding: 15px;
-      margin-top: 12px;
+      margin-bottom: 12px;
+      background: #fff;
     }
 
-    .order-header {
+    .order-card-top {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       gap: 10px;
       margin-bottom: 10px;
     }
 
-    .order-type {
-      font-weight: 800;
-    }
-
-    .status {
-      padding: 5px 9px;
+    .order-type-badge {
+      display: inline-block;
+      padding: 4px 10px;
       border-radius: 20px;
       font-size: 11px;
+      font-weight: 900;
+    }
+
+    .order-type-badge.buy {
+      background: #e7f8ee;
+      color: #168447;
+    }
+
+    .order-type-badge.sell {
+      background: #fff0e2;
+      color: #b8560a;
+    }
+
+    .order-card-id {
+      color: #98a2b3;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    .order-card-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 6px 0;
+      font-size: 13px;
+      border-bottom: 1px solid #f3f5f8;
+    }
+
+    .order-card-row:last-of-type {
+      border-bottom: none;
+    }
+
+    .order-card-row span:first-child {
+      color: #7d8795;
+      flex-shrink: 0;
+    }
+
+    .order-card-row strong {
+      text-align: right;
+      word-break: break-all;
+    }
+
+    .wallet-box {
+      background: #f5f8fd;
+      border: 1px dashed #c7d5ea;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-top: 10px;
+    }
+
+    .wallet-box-label {
+      color: #667085;
+      font-size: 11px;
       font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .wallet-box-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wallet-box-value {
+      flex: 1;
+      font-family: monospace;
+      font-size: 12px;
+      word-break: break-all;
+      color: #172033;
+    }
+
+    .copy-btn {
+      flex-shrink: 0;
+      border: none;
+      background: #0757d9;
+      color: #fff;
+      border-radius: 9px;
+      padding: 8px 11px;
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .copy-btn.copied {
+      background: #168447;
+    }
+
+    .order-card-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .order-card-actions .btn {
+      flex: 1;
+    }
+
+    /* =====================================================
+       STATUTS
+    ====================================================== */
+
+    .status {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 900;
     }
 
     .status.pending {
@@ -699,8 +655,8 @@
     }
 
     .status.processing {
-      background: #e8fff3;
-      color: #07d953;
+      background: #e8f1ff;
+      color: #0757d9;
     }
 
     .status.completed {
@@ -713,2938 +669,406 @@
       color: #c62828;
     }
 
-    .order-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 5px 0;
-      font-size: 13px;
+    .status.dispute {
+      background: #f4eaff;
+      color: #7135a8;
     }
 
-    .order-row span:first-child {
-      color: #7d9586;
-    }
+    /* =====================================================
+       MESSAGES
+    ====================================================== */
 
-    /* ===============================
-       PAIEMENT
-    ================================ */
-
-    .payment-amount-box {
-      background: #f1f9f5;
-      border-radius: 16px;
-      padding: 18px;
-      text-align: center;
-      margin: 18px 0;
-    }
-
-    .payment-amount-label {
-      font-size: 14px;
-      color: #668571;
-      margin-bottom: 6px;
-    }
-
-    .payment-amount-value {
-      font-size: 28px;
-      font-weight: 900;
-      color: #07d953;
-    }
-
-    .payment-qr-box {
-      background: #fff;
-      border: 1px solid #e4ece8;
-      border-radius: 18px;
-      padding: 20px;
-      text-align: center;
-      margin: 18px 0;
-    }
-
-    .payment-qr-text {
-      font-size: 14px;
-      color: #476753;
-      margin-bottom: 15px;
-      line-height: 1.5;
-    }
-
-    #orangeMoneyQr {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: center;
-      min-height: 220px;
-    }
-
-    #orangeMoneyQr img {
-      display: block;
-      width: 220px;
-      height: 220px;
-      max-width: 100%;
-      margin: auto;
-    }
-
-    .payment-or,
-    .payment-or-inline {
-      text-align: center;
-      font-weight: 800;
-      color: #668571;
-      margin: 15px 0;
-    }
-
-    .payment-main-button {
-      width: 100%;
-      font-size: 15px;
-      font-weight: 900;
-    }
-
-    .payment-security-box {
-      background: #ecfdf3;
-      color: #027a48;
-      border-radius: 12px;
-      padding: 12px;
-      margin: 15px 0;
-      text-align: center;
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 1.5;
-    }
-
-    .proof-upload-label {
-      font-size: 14px;
-      font-weight: 800;
-      color: #345440;
-      margin: 18px 0 8px;
-    }
-
-    .dropzone {
-      position: relative;
-      border: 2px dashed #eae1c7;
-      border-radius: 16px;
-      padding: 22px 16px;
-      text-align: center;
-      background: #f9fefb;
-      transition: .2s;
-    }
-
-    .dropzone.dragover {
-      border-color: #07d953;
-      background: #eefff6;
-    }
-
-    .dropzone-icon {
-      font-size: 26px;
-      margin-bottom: 8px;
-    }
-
-    .dropzone-text {
-      font-size: 13px;
-      font-weight: 700;
-      color: #3c5846;
-    }
-
-    .dropzone-link {
-      color: #07d953;
-      text-decoration: underline;
-    }
-
-    .dropzone-hint {
-      font-size: 11px;
-      color: #98b3a2;
-      margin-top: 5px;
-    }
-
-    .proof-preview-wrap {
-      text-align: center;
-    }
-
-    .proof-preview-img {
-      max-width: 100%;
-      max-height: 220px;
-      border-radius: 12px;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .proof-remove-btn {
-      margin-top: 10px;
-      border: none;
-      background: #fee9e9;
-      color: #c62828;
-      border-radius: 10px;
-      padding: 8px 14px;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    #proofUploadStatus {
-      font-size: 12px;
-      margin-top: 8px;
-      color: #7d9586;
-    }
-
-    #proofUploadStatus.success {
-      color: #168447;
-      font-weight: 700;
-    }
-
-    #proofUploadStatus.error {
-      color: #c62828;
-      font-weight: 700;
-    }
-
-    /* ===============================
-       NAVIGATION
-    ================================ */
-
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 520px;
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid #e1ede7;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 8px;
-      z-index: 50;
-    }
-
-    .nav-btn {
-      border: none;
-      background: transparent;
-      color: #7d9586;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 7px 13px;
-      border-radius: 10px;
-    }
-
-    .nav-btn.active {
-      color: #07d953;
-      background: #edfff6;
-    }
-
-    .page,
-    .sub-page {
-      display: none;
-    }
-
-    .page.active,
-    .sub-page.active {
-      display: block;
-    }
-
-    #appMessage {
+    #adminMessage {
       display: none;
       padding: 13px 15px;
       border-radius: 12px;
       margin-bottom: 15px;
       font-size: 13px;
+      font-weight: 700;
       line-height: 1.4;
-      font-weight: 600;
     }
 
-    #appMessage.success {
+    #adminMessage.success {
       display: block;
       background: #e8f8ef;
       color: #168447;
     }
 
-    #appMessage.error {
+    #adminMessage.error {
       display: block;
       background: #feecec;
       color: #c62828;
     }
 
-    #appMessage.info {
+    #adminMessage.info {
       display: block;
-      background: #eafff4;
-      color: #07d953;
+      background: #eaf3ff;
+      color: #0757d9;
     }
 
-    .hidden {
-      display: none !important;
-    }
-
-    .center {
+    .empty {
+      padding: 30px;
       text-align: center;
+      color: #7b8493;
+      font-size: 13px;
     }
 
-    .small {
+    .order-detail {
+      background: #f7f9fc;
+      border-radius: 12px;
+      padding: 13px;
+      line-height: 1.6;
       font-size: 12px;
-      color: #7d9586;
-      line-height: 1.5;
     }
 
-    .mt {
-      margin-top: 15px;
-    }
+    /* =====================================================
+       RESPONSIVE
+    ====================================================== */
 
-    .wallet-help {
-      margin-top: 7px;
-    }
-
-    .wallet-input {
-      font-family: monospace;
-      font-size: 14px;
-    }
-
-    .break-word {
-      word-break: break-word;
-      overflow-wrap: anywhere;
-    }
-
-    @media (min-width: 521px) {
-      body {
-        padding: 20px 0;
+    @media (max-width: 900px) {
+      .dashboard-grid {
+        grid-template-columns: repeat(2,1fr);
       }
 
-      .app {
-        border-radius: 25px;
-        overflow: hidden;
-        box-shadow: 0 15px 50px rgba(0,0,0,.08);
-      }
-
-      .bottom-nav {
-        border-radius: 20px 20px 0 0;
+      .form-grid-4 {
+        grid-template-columns: repeat(2,1fr);
       }
     }
 
-    @media (max-width: 520px) {
-      .payment-amount-value {
-        font-size: 25px;
+    @media (max-width: 650px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
       }
 
-      #orangeMoneyQr {
-        min-height: 200px;
+      .dashboard-grid {
+        grid-template-columns: repeat(2,1fr);
       }
 
-      #orangeMoneyQr img {
-        width: 200px;
-        height: 200px;
+      .form-grid,
+      .form-grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .admin-container {
+        padding: 15px 12px 70px;
+      }
+
+      .card {
+        padding: 16px;
       }
     }
-   /* ============================================================
-   FASO DIGIT TRADE — UI VERT / OR / ROUGE (Burkina Faso)
-   Nouvelle interface visuelle
-   La logique JavaScript reste inchangée
-   ============================================================ */
-
-:root{
-  --noa-green-1:#06c94d;
-  --noa-green-2:#08ea5a;
-  --noa-green-3:#12ff68;
-  --noa-deep:#03722b;
-  --noa-deep-2:#024d1d;
-  --noa-glass:rgba(7,210,81,.58);
-  --noa-glass-2:rgba(6,180,69,.72);
-  --noa-border:rgba(255,210,76,.62);
-  --noa-white:#f7fffb;
-  --noa-muted:#ffeeb9;
-  --noa-accent:#19ff6d;
-  --noa-green:#1bdc88;
-  --noa-red:#ff4961;
-}
-
-/* ============================================================
-   FOND GÉNÉRAL
-   ============================================================ */
-
-html{
-  background:#03722b;
-}
-
-body{
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  background:
-    radial-gradient(
-      circle at 15% 15%,
-      rgba(24,255,108,.28),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 90% 30%,
-      rgba(20,255,106,.32),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 50% 100%,
-      rgba(0,255,93,.18),
-      transparent 35%
-    ),
-    linear-gradient(
-      145deg,
-      #035d24 0%,
-      #06c94d 48%,
-      #07e056 72%,
-      #03722b 100%
-    );
-
-  color:var(--noa-white);
-}
-
-/* Effet lumineux discret */
-
-body::before{
-  content:"";
-
-  position:fixed;
-
-  inset:0;
-
-  pointer-events:none;
-
-  opacity:.35;
-
-  background:
-    linear-gradient(
-      135deg,
-      transparent 0 42%,
-      rgba(255,255,255,.08) 42.2% 44%,
-      transparent 44.2% 100%
-    );
-
-  z-index:0;
-}
-
-/* ============================================================
-   APPLICATION
-   ============================================================ */
-
-.app{
-  max-width:520px;
-
-  background:transparent;
-
-  min-height:100vh;
-
-  position:relative;
-
-  z-index:1;
-}
-
-/* ============================================================
-   HEADER
-   ============================================================ */
-
-.header{
-  position:relative;
-
-  padding:
-    30px
-    20px
-    20px;
-
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(40,255,118,.30),
-      transparent 42%
-    ),
-    linear-gradient(
-      145deg,
-      #07dc55,
-      #06bd49 70%,
-      #059b3c
-    );
-
-  border-radius:
-    0
-    0
-    30px
-    30px;
-
-  border-bottom:
-    1px solid rgba(255,212,82,.48);
-
-  box-shadow:
-    0 14px 40px rgba(0,110,40,.35);
-
-  text-align:center;
-}
-
-/* ============================================================
-   LOGO / NOM FASO
-   ============================================================ */
-
-.brand{
-  font-size:28px;
-
-  font-weight:400;
-
-  letter-spacing:4px;
-
-  color:#f5fffa;
-
-  text-shadow:
-    0 0 18px rgba(255,208,69,.35);
-}
-
-.subtitle{
-  margin-top:5px;
-
-  font-size:12px;
-
-  letter-spacing:3px;
-
-  opacity:.92;
-
-  font-weight:400;
-
-  color:#d8ffeb;
-}
-
-/* ============================================================
-   PAYS
-   ============================================================ */
-
-.country-badge{
-  margin-top:14px;
-
-  padding:
-    7px
-    12px;
-
-  border:
-    1px solid rgba(255,218,108,.55);
-
-  background:
-    rgba(0,185,67,.30);
-
-  box-shadow:
-    inset 0 0 18px rgba(0,255,93,.12),
-    0 0 16px rgba(0,255,93,.12);
-
-  font-size:11px;
-
-  font-weight:500;
-
-  color:#e9fff4;
-
-  border-radius:14px;
-}
-
-/* ============================================================
-   CONTENU
-   ============================================================ */
-
-.content{
-  padding:
-    16px
-    14px
-    105px;
-}
-
-/* ============================================================
-   CARTES
-   ============================================================ */
-
-.card{
-  background:
-    linear-gradient(
-      145deg,
-      rgba(10,226,89,.86),
-      rgba(4,171,65,.86)
-    );
-
-  border:
-    1px solid var(--noa-border);
-
-  border-radius:22px;
-
-  padding:17px;
-
-  margin-bottom:13px;
-
-  box-shadow:
-    inset 0 0 22px rgba(35,255,115,.10),
-    0 12px 30px rgba(0,100,36,.28);
-
-  backdrop-filter:blur(10px);
-}
-
-.card-title{
-  color:#fff;
-
-  font-size:18px;
-
-  font-weight:500;
-
-  letter-spacing:.2px;
-}
-
-.card-description,
-.small,
-.payment-qr-text{
-  color:var(--noa-muted);
-}
-
-/* ============================================================
-   ONGLETS
-   ============================================================ */
-
-.auth-tabs,
-.exchange-tabs{
-  background:
-    rgba(1,126,47,.55);
-
-  border:
-    1px solid rgba(255,210,75,.38);
-
-  border-radius:18px;
-
-  padding:4px;
-
-  box-shadow:
-    inset 0 0 15px rgba(0,255,93,.06);
-}
-
-.auth-tab,
-.exchange-tab{
-  color:#ffeeb9;
-
-  border-radius:14px;
-
-  font-weight:500;
-
-  padding:
-    12px
-    10px;
-
-  transition:
-    .2s ease;
-}
-
-.auth-tab.active,
-.exchange-tab.active{
-  background:
-    linear-gradient(
-      135deg,
-      #18ff6c,
-      #0bf05e
-    );
-
-  color:#fff !important;
-
-  box-shadow:
-    0 0 18px rgba(17,255,104,.35),
-    inset 0 0 10px rgba(255,255,255,.12);
-}
-
-/* ============================================================
-   CHAMPS
-   ============================================================ */
-
-.field label{
-  color:#e8fff3;
-
-  font-weight:500;
-}
-
-.field input,
-.field select,
-.field textarea{
-  border:
-    1px solid rgba(255,210,75,.55);
-
-  background:
-    rgba(3,145,55,.56);
-
-  color:#fff;
-
-  border-radius:15px;
-
-  padding:
-    13px
-    14px;
-
-  outline:none;
-
-  box-shadow:
-    inset 0 0 12px rgba(0,255,93,.05);
-
-  transition:
-    .2s ease;
-}
-
-.field input::placeholder,
-.field textarea::placeholder{
-  color:#ffeaa9;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-  border-color:#35ff7f;
-
-  box-shadow:
-    0 0 0 3px rgba(25,255,109,.13),
-    0 0 18px rgba(25,255,109,.16);
-}
-
-.phone-prefix{
-  border-color:
-    rgba(255,210,75,.55);
-
-  background:
-    rgba(3,145,55,.56);
-
-  color:#fff;
-}
-
-.password-toggle{
-  color:#d7ffeb;
-}
-
-/* ============================================================
-   BOUTONS
-   ============================================================ */
-
-.btn{
-  border-radius:16px;
-
-  padding:
-    13px
-    16px;
-
-  font-weight:600;
-
-  border:
-    1px solid transparent;
-
-  box-shadow:
-    0 7px 18px rgba(0,105,38,.22);
-
-  transition:
-    .2s ease;
-}
-
-.btn-primary{
-  background:
-    linear-gradient(
-      135deg,
-      #13ff69,
-      #07e558
-    );
-
-  color:#fff;
-
-  border-color:
-    rgba(255,213,87,.62);
-
-  box-shadow:
-    0 0 20px rgba(0,255,93,.22),
-    0 8px 18px rgba(0,105,38,.25);
-}
-
-.btn-primary:hover{
-  background:
-    linear-gradient(
-      135deg,
-      #27ff76,
-      #08ee5c
-    );
-}
-
-.btn-secondary{
-  background:
-    rgba(7,190,74,.62);
-
-  color:#eafff4;
-
-  border-color:
-    rgba(255,211,80,.48);
-}
-
-.btn-success{
-  background:
-    rgba(0,174,102,.22);
-
-  color:#8dffd0;
-
-  border-color:
-    rgba(43,235,157,.50);
-}
-
-.btn-danger{
-  background:
-    rgba(224,34,70,.20);
-
-  color:#ffb5c0;
-
-  border-color:
-    rgba(255,81,106,.50);
-}
-
-/* ============================================================
-   SOLDE
-   ============================================================ */
-
-.balance-box{
-  background:
-    linear-gradient(
-      145deg,
-      rgba(8,205,80,.70),
-      rgba(3,150,57,.70)
-    );
-
-  border:
-    1px solid rgba(255,210,76,.55);
-
-  color:#fff;
-
-  border-radius:20px;
-
-  box-shadow:
-    inset 0 0 20px rgba(30,255,112,.08),
-    0 8px 25px rgba(0,100,36,.20);
-}
-
-.balance-box strong{
-  color:#28ff76;
-}
-
-.balance-alert{
-  background:
-    rgba(222,38,61,.18);
-
-  border-color:
-    rgba(255,88,108,.55);
-
-  color:#ffd4db;
-}
-
-/* ============================================================
-   MONTANT
-   ============================================================ */
-
-.amount-box{
-  background:
-    linear-gradient(
-      145deg,
-      rgba(10,226,89,.80),
-      rgba(4,171,65,.80)
-    );
-
-  border:
-    1px solid rgba(255,210,76,.60);
-
-  border-radius:22px;
-
-  padding:16px;
-
-  box-shadow:
-    inset 0 0 22px rgba(35,255,115,.08),
-    0 10px 25px rgba(0,100,36,.22);
-}
-
-.amount-label{
-  color:#ffedb8;
-
-  font-weight:500;
-}
-
-.amount-input{
-  color:#fff;
-}
-
-.amount-unit{
-  color:#28ff76;
-}
-
-/* ============================================================
-   RÉSEAUX USDT
-   ============================================================ */
-
-.network-grid{
-  gap:10px;
-}
-
-.network-option{
-  background:
-    linear-gradient(
-      145deg,
-      rgba(8,199,78,.74),
-      rgba(3,145,55,.72)
-    );
-
-  color:#fff;
-
-  border:
-    1.5px solid rgba(255,210,73,.48);
-
-  border-radius:18px;
-
-  padding:
-    14px
-    10px;
-
-  box-shadow:
-    inset 0 0 16px rgba(0,255,93,.07);
-
-  transition:
-    .2s ease;
-}
-
-.network-option:hover{
-  border-color:#3bff82;
-
-  transform:translateY(-1px);
-}
-
-.network-option.active{
-  border-color:#ffd75e;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(14,237,95,.86),
-      rgba(4,181,68,.88)
-    );
-
-  box-shadow:
-    0 0 20px rgba(39,255,118,.25),
-    inset 0 0 18px rgba(255,209,72,.10);
-}
-
-.network-fee{
-  color:#ffedb8;
-}
-
-/* ============================================================
-   RÉSUMÉ DE COMMANDE
-   ============================================================ */
-
-.summary{
-  background:
-    linear-gradient(
-      145deg,
-      rgba(8,205,80,.70),
-      rgba(3,150,57,.70)
-    );
-
-  border:
-    1px solid rgba(255,210,76,.55);
-
-  border-radius:19px;
-
-  padding:15px;
-
-  color:#fff;
-
-  box-shadow:
-    inset 0 0 20px rgba(30,255,112,.08),
-    0 8px 25px rgba(0,100,36,.18);
-}
-
-.summary-row{
-  color:#eafff4;
-}
-
-.summary-row span:first-child{
-  color:#ffedb7;
-}
-
-.summary-total{
-  border-top-color:
-    rgba(255,214,90,.38);
-}
-
-.summary-total strong{
-  color:#28ff76;
-}
-
-/* ============================================================
-   INFORMATIONS
-   ============================================================ */
-
-.info-box{
-  background:
-    linear-gradient(
-      145deg,
-      rgba(8,205,80,.70),
-      rgba(3,150,57,.70)
-    );
-
-  border:
-    1px solid rgba(255,210,76,.45);
-
-  border-left:
-    4px solid #28ff76;
-
-  color:#d9ffec;
-
-  border-radius:15px;
-
-  box-shadow:
-    inset 0 0 15px rgba(30,255,112,.05);
-}
-
-.warning-box{
-  background:
-    linear-gradient(
-      145deg,
-      rgba(8,205,80,.70),
-      rgba(3,150,57,.70)
-    );
-
-  border:
-    1px solid rgba(255,210,76,.45);
-
-  border-left:
-    4px solid #ffd23f;
-
-  color:#fff1b4;
-
-  border-radius:15px;
-
-  box-shadow:
-    inset 0 0 15px rgba(255,210,63,.04);
-}
-
-/* ============================================================
-   PAIEMENT
-   ============================================================ */
-
-.binance-transfer-box{
-  background:
-    linear-gradient(
-      145deg,
-      rgba(8,205,80,.70),
-      rgba(3,150,57,.70)
-    );
-
-  border:
-    1px solid rgba(255,210,76,.55);
-
-  color:#fff;
-
-  border-radius:19px;
-
-  box-shadow:
-    inset 0 0 20px rgba(30,255,112,.08);
-}
-
-.payment-amount-value{
-  color:#fff;
-}
-
-.payment-amount-box{
-  background:
-    linear-gradient(
-      145deg,
-      rgba(8,205,80,.70),
-      rgba(3,150,57,.70)
-    ) !important;
-
-  border:
-    1px solid rgba(255,210,76,.55) !important;
-}
-
-.payment-qr-box{
-  background:
-    linear-gradient(
-      145deg,
-      rgba(8,205,80,.70),
-      rgba(3,150,57,.70)
-    ) !important;
-
-  border:
-    1px solid rgba(255,210,76,.55) !important;
-
-  color:#fff !important;
-}
-
-.payment-amount-label{
-  color:
-    rgba(255,255,255,.7) !important;
-}
-
-/* ============================================================
-   COPIE
-   ============================================================ */
-
-.copy-btn-inline{
-  background:
-    rgba(5,208,79,.72);
-
-  color:#dfffef;
-
-  border:
-    1px solid rgba(255,210,77,.45);
-
-  border-radius:12px;
-}
-
-.copy-btn-inline:hover{
-  background:
-    rgba(12,229,91,.82);
-}
-
-/* ============================================================
-   MESSAGES
-   ============================================================ */
-
-#appMessage.success{
-  background:
-    rgba(13,180,106,.20);
-
-  color:#a5ffd9;
-
-  border:
-    1px solid rgba(53,239,164,.45);
-
-  border-radius:15px;
-}
-
-#appMessage.error{
-  background:
-    rgba(224,32,62,.20);
-
-  color:#ffc2cb;
-
-  border:
-    1px solid rgba(255,90,111,.45);
-
-  border-radius:15px;
-}
-
-#appMessage.info{
-  background:
-    rgba(9,225,88,.25);
-
-  color:#d4ffe9;
-
-  border:
-    1px solid rgba(255,210,76,.45);
-
-  border-radius:15px;
-}
-
-/* ============================================================
-   BARRE UTILISATEUR
-   ============================================================ */
-
-.user-bar{
-  background:
-    linear-gradient(
-      145deg,
-      rgba(9,211,83,.80),
-      rgba(3,154,58,.80)
-    );
-
-  border:
-    1px solid rgba(255,210,76,.52);
-
-  border-radius:20px;
-
-  padding:14px;
-
-  margin-bottom:13px;
-
-  box-shadow:
-    inset 0 0 18px rgba(25,255,109,.07),
-    0 8px 22px rgba(0,100,36,.20);
-}
-
-.user-name{
-  color:#fff;
-
-  font-weight:600;
-}
-
-.user-country{
-  color:#ffeeb9;
-}
-
-.logout-btn{
-  background:
-    rgba(4,160,61,.55);
-
-  color:#dfffef;
-
-  border:
-    1px solid rgba(255,210,77,.40);
-
-  border-radius:12px;
-}
-
-/* ============================================================
-   NAVIGATION INFÉRIEURE
-   ============================================================ */
-
-.bottom-nav{
-  max-width:520px;
-
-  background:
-    rgba(3,122,46,.88);
-
-  border-top:
-    1px solid rgba(255,211,79,.55);
-
-  border-radius:
-    24px
-    24px
-    0
-    0;
-
-  box-shadow:
-    0 -8px 30px rgba(0,91,33,.34),
-    inset 0 0 18px rgba(36,255,116,.08);
-
-  backdrop-filter:blur(16px);
-
-  padding:
-    8px
-    7px
-    10px;
-}
-
-.nav-btn{
-  color:#ffedb7;
-
-  font-weight:500;
-
-  border-radius:16px;
-
-  padding:
-    8px
-    9px;
-
-  transition:
-    .2s ease;
-}
-
-.nav-btn:hover{
-  color:#fff;
-}
-
-.nav-btn.active{
-  color:#fff;
-
-  background:
-    linear-gradient(
-      135deg,
-      #13ff69,
-      #08ed5b
-    );
-
-  box-shadow:
-    0 0 18px rgba(22,255,107,.28),
-    inset 0 0 10px rgba(255,255,255,.10);
-}
-
-/* ============================================================
-   ÉLÉMENTS DE FORMULAIRE SUPPLÉMENTAIRES
-   ============================================================ */
-
-input,
-select,
-textarea{
-  color:#fff;
-}
-
-select option{
-  background:#069d3d;
-  color:#fff;
-}
-
-button{
-  -webkit-tap-highlight-color:transparent;
-}
-
-/* ============================================================
-   LIENS
-   ============================================================ */
-
-a{
-  color:#ffd863;
-}
-
-a:hover{
-  color:#ffe9a7;
-}
-
-/* ============================================================
-   SCROLLBAR
-   ============================================================ */
-
-::-webkit-scrollbar{
-  width:5px;
-}
-
-::-webkit-scrollbar-track{
-  background:
-    rgba(1,87,32,.45);
-}
-
-::-webkit-scrollbar-thumb{
-  background:
-    linear-gradient(
-      #13ff69,
-      #07e558
-    );
-
-  border-radius:10px;
-}
-
-/* ============================================================
-   EFFETS DE SURVOL
-   ============================================================ */
-
-.card,
-.network-option,
-.amount-box,
-.balance-box,
-.summary{
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease,
-    border-color .2s ease;
-}
-
-.card:hover{
-  border-color:
-    rgba(255,214,91,.72);
-
-  box-shadow:
-    inset 0 0 25px rgba(35,255,115,.12),
-    0 14px 35px rgba(0,100,36,.30);
-}
-
-/* ============================================================
-   MOBILE
-   ============================================================ */
-
-@media (max-width:520px){
-
-  .content{
-    padding-left:12px;
-    padding-right:12px;
-  }
-
-  .header{
-    padding-top:25px;
-  }
-
-  .brand{
-    font-size:25px;
-    letter-spacing:3px;
-  }
-
-  .subtitle{
-    font-size:11px;
-    letter-spacing:2px;
-  }
-
-  .card{
-    border-radius:20px;
-    padding:15px;
-  }
-
-  .network-option{
-    border-radius:16px;
-  }
-
-  .bottom-nav{
-    border-radius:
-      22px
-      22px
-      0
-      0;
-  }
-
-}
-
-/* ============================================================
-   ÉCRANS PLUS LARGES
-   ============================================================ */
-
-@media (min-width:521px){
-
-  body{
-    padding:0;
-  }
-
-  .app{
-    border-radius:0;
-    box-shadow:none;
-  }
-
-}
-    /* ============================================================
-   FASO DIGIT TRADE — ACHETER VERT / VENDRE ROUGE
-   ============================================================ */
-
-#buyTab {
-  background: linear-gradient(
-    135deg,
-    #00d084,
-    #12e6b0
-  ) !important;
-  color: #fff !important;
-  box-shadow: 0 0 20px rgba(0, 255, 170, 0.35) !important;
-}
-
-#sellTab {
-  background: linear-gradient(
-    135deg,
-    #ff2020,
-    #ff4b4b
-  ) !important;
-  color: #fff !important;
-  box-shadow: 0 0 20px rgba(255, 40, 40, 0.30) !important;
-}
-
-#buyTab,
-#sellTab {
-  border-radius: 16px !important;
-  font-weight: 700 !important;
-  border: none !important;
-  transition: all 0.25s ease;
-}
-
-/* ============================================================
-   MENU MOYEN DE PAIEMENT
-   ============================================================ */
-
-#paymentMethod {
-  font-weight: 600;
-}
-
-#paymentMethod option[value="orange_money"] {
-  color: #ff8a00;
-  font-weight: 700;
-}
- /* ACHAT : vert uniquement sélectionné */
-#buyTab.active {
-  background: linear-gradient(135deg, #00d084, #12e6b0) !important;
-  color: #fff !important;
-  box-shadow: 0 0 20px rgba(0, 255, 170, 0.35) !important;
-}
-
-/* VENTE : rouge uniquement sélectionné */
-#sellTab.active {
-  background: linear-gradient(135deg, #ff2020, #ff4b4b) !important;
-  color: #fff !important;
-  box-shadow: 0 0 20px rgba(255, 40, 40, 0.30) !important;
-}
-
-/* Non sélectionné : bleu */
-#buyTab:not(.active),
-#sellTab:not(.active) {
-  background: linear-gradient(135deg, #06c94d, #08ea5a) !important;
-  color: #fff !important;
-  box-shadow: none !important;
-}   
-  
-/* ============================================================
-   FASO DIGIT TRADE — PALETTE OFFICIELLE SYNCHRONISÉE AU LOGO
-   Bleu nuit / Noir + Émeraude + Or + Rouge
-   ============================================================ */
-
-:root{
-  --brand-navy:#07121f;
-  --brand-navy-2:#0c1b2b;
-  --brand-navy-3:#10263a;
-  --brand-green:#18d86b;
-  --brand-green-2:#08a957;
-  --brand-gold:#f6c945;
-  --brand-gold-2:#ffd96a;
-  --brand-red:#ef3f4f;
-  --brand-red-2:#ff5a5f;
-  --brand-white:#f7fbff;
-  --brand-muted:#aab9c8;
-  --brand-border:rgba(246,201,69,.34);
-}
-
-/* Fond général */
-html{
-  background:var(--brand-navy);
-}
-
-body{
-  background:
-    radial-gradient(circle at 12% 10%, rgba(24,216,107,.14), transparent 28%),
-    radial-gradient(circle at 88% 25%, rgba(239,63,79,.12), transparent 26%),
-    radial-gradient(circle at 50% 100%, rgba(246,201,69,.08), transparent 34%),
-    linear-gradient(145deg,var(--brand-navy) 0%,#091725 48%,#050c15 100%) !important;
-  color:var(--brand-white) !important;
-}
-
-/* En-tête */
-.header{
-  background:
-    radial-gradient(circle at 50% 0%,rgba(246,201,69,.18),transparent 35%),
-    linear-gradient(145deg,#0b2232 0%,#09291f 48%,#11131d 100%) !important;
-  border-bottom:1px solid var(--brand-border) !important;
-  box-shadow:0 14px 40px rgba(0,0,0,.35) !important;
-}
-
-.brand{
-  color:var(--brand-gold-2) !important;
-  text-shadow:0 0 18px rgba(246,201,69,.28) !important;
-}
-
-.subtitle{
-  color:#d7e5ef !important;
-}
-
-.country-badge{
-  background:rgba(24,216,107,.12) !important;
-  border-color:rgba(246,201,69,.45) !important;
-  color:#f4f8fb !important;
-}
-
-/* Conteneur et cartes */
-.app{
-  background:transparent !important;
-}
-
-.card{
-  background:
-    linear-gradient(145deg,rgba(14,35,49,.96),rgba(7,20,31,.96)) !important;
-  border-color:var(--brand-border) !important;
-  box-shadow:
-    inset 0 0 22px rgba(24,216,107,.045),
-    0 12px 30px rgba(0,0,0,.30) !important;
-}
-
-.card-title{
-  color:#fff !important;
-}
-
-.card-description,
-.small,
-.payment-qr-text{
-  color:var(--brand-muted) !important;
-}
-
-/* Onglets */
-.auth-tabs,
-.exchange-tabs{
-  background:rgba(4,13,23,.78) !important;
-  border-color:rgba(246,201,69,.25) !important;
-}
-
-.auth-tab,
-.exchange-tab{
-  color:#aebdca !important;
-}
-
-.auth-tab.active,
-.exchange-tab.active{
-  background:linear-gradient(135deg,#183a38,#12302c) !important;
-  color:var(--brand-gold-2) !important;
-  box-shadow:0 0 16px rgba(246,201,69,.12) !important;
-}
-
-/* Champs */
-.field label{
-  color:#d9e5ed !important;
-}
-
-.field input,
-.field select,
-.field textarea,
-.phone-prefix{
-  background:rgba(8,22,34,.88) !important;
-  border-color:rgba(246,201,69,.28) !important;
-  color:#fff !important;
-}
-
-.field input::placeholder,
-.field textarea::placeholder{
-  color:#8293a2 !important;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-  border-color:var(--brand-gold) !important;
-  box-shadow:0 0 0 3px rgba(246,201,69,.10),0 0 18px rgba(246,201,69,.08) !important;
-}
-
-/* Boutons généraux */
-.btn-primary{
-  background:linear-gradient(135deg,#18d86b,#079c50) !important;
-  border-color:rgba(246,201,69,.48) !important;
-  box-shadow:0 0 20px rgba(24,216,107,.16),0 8px 18px rgba(0,0,0,.25) !important;
-}
-
-.btn-primary:hover{
-  background:linear-gradient(135deg,#27e978,#0bb35c) !important;
-}
-
-.btn-secondary{
-  background:rgba(24,216,107,.10) !important;
-  color:#bff5d8 !important;
-  border-color:rgba(24,216,107,.30) !important;
-}
-
-.btn-success{
-  background:rgba(24,216,107,.10) !important;
-  color:#8ff0ba !important;
-  border-color:rgba(24,216,107,.35) !important;
-}
-
-.btn-danger{
-  background:rgba(239,63,79,.11) !important;
-  color:#ffabb3 !important;
-  border-color:rgba(239,63,79,.35) !important;
-}
-
-/* Solde / montant / résumé */
-.balance-box,
-.amount-box,
-.summary,
-.user-bar,
-.payment-amount-box,
-.payment-qr-box,
-.binance-transfer-box{
-  background:linear-gradient(145deg,rgba(14,36,49,.96),rgba(7,20,31,.96)) !important;
-  border-color:rgba(246,201,69,.28) !important;
-  color:#fff !important;
-  box-shadow:inset 0 0 20px rgba(24,216,107,.035),0 8px 25px rgba(0,0,0,.24) !important;
-}
-
-.balance-box strong,
-.amount-unit,
-.summary-total strong{
-  color:var(--brand-gold-2) !important;
-}
-
-.amount-label,
-.summary-row span:first-child,
-.payment-amount-label{
-  color:#9eafbd !important;
-}
-
-/* Réseaux */
-.network-option{
-  background:linear-gradient(145deg,rgba(13,36,49,.96),rgba(7,20,31,.96)) !important;
-  border-color:rgba(246,201,69,.25) !important;
-  color:#fff !important;
-}
-
-.network-option.active{
-  background:linear-gradient(145deg,rgba(24,216,107,.18),rgba(8,53,40,.80)) !important;
-  border-color:var(--brand-gold) !important;
-  box-shadow:0 0 20px rgba(24,216,107,.12),inset 0 0 18px rgba(246,201,69,.06) !important;
-}
-
-.network-fee{
-  color:#c8d4dd !important;
-}
-
-/* Informations */
-.info-box{
-  background:rgba(24,216,107,.08) !important;
-  border-color:rgba(24,216,107,.25) !important;
-  border-left-color:var(--brand-green) !important;
-  color:#ccebdd !important;
-}
-
-.warning-box{
-  background:rgba(246,201,69,.08) !important;
-  border-color:rgba(246,201,69,.25) !important;
-  border-left-color:var(--brand-gold) !important;
-  color:#f7e6ad !important;
-}
-
-.error-box{
-  background:rgba(239,63,79,.09) !important;
-  border-color:rgba(239,63,79,.28) !important;
-  border-left-color:var(--brand-red) !important;
-  color:#ffc2c8 !important;
-}
-
-/* Paiement / copie */
-.copy-btn-inline{
-  background:rgba(24,216,107,.10) !important;
-  color:#bff5d8 !important;
-  border-color:rgba(246,201,69,.25) !important;
-}
-
-.payment-security-box{
-  background:rgba(24,216,107,.08) !important;
-  color:#a9efc8 !important;
-}
-
-/* Statuts */
-.status.processing{
-  background:rgba(24,216,107,.10) !important;
-  color:#8ff0ba !important;
-}
-
-.status.completed{
-  background:rgba(24,216,107,.13) !important;
-  color:#9bf2be !important;
-}
-
-.status.pending{
-  background:rgba(246,201,69,.10) !important;
-  color:#f5d978 !important;
-}
-
-.status.cancelled{
-  background:rgba(239,63,79,.10) !important;
-  color:#ffabb3 !important;
-}
-
-/* Navigation basse */
-.bottom-nav{
-  background:rgba(5,15,25,.94) !important;
-  border-top-color:rgba(246,201,69,.30) !important;
-  box-shadow:0 -8px 30px rgba(0,0,0,.35),inset 0 0 18px rgba(24,216,107,.04) !important;
-}
-
-.nav-btn{
-  color:#9eafbd !important;
-}
-
-.nav-btn.active{
-  color:#fff !important;
-  background:linear-gradient(135deg,#18d86b,#078f4a) !important;
-  box-shadow:0 0 18px rgba(24,216,107,.20),inset 0 0 10px rgba(255,255,255,.08) !important;
-}
-
-/* Liens et scrollbar */
-a{
-  color:var(--brand-gold-2) !important;
-}
-
-a:hover{
-  color:#fff0b5 !important;
-}
-
-::-webkit-scrollbar-track{
-  background:#06111c !important;
-}
-
-::-webkit-scrollbar-thumb{
-  background:linear-gradient(#18d86b,#f6c945,#ef3f4f) !important;
-}
-
-/* Achat / Vente : cohérents avec le logo */
-#buyTab{
-  background:linear-gradient(135deg,#18d86b,#079c50) !important;
-  box-shadow:0 0 20px rgba(24,216,107,.24) !important;
-}
-
-#sellTab{
-  background:linear-gradient(135deg,#ef3f4f,#b91f36) !important;
-  box-shadow:0 0 20px rgba(239,63,79,.22) !important;
-}
-
-</style>
+  </style>
 </head>
 
 <body>
 
-<div class="app">
+<!-- =========================================================
+     LOGIN
+========================================================== -->
 
-  <header class="header">
-    <h1 class="brand">FASO DIGIT TRADE</h1>
-    <div class="subtitle">Achat & vente de USDT</div>
-    <div class="country-badge">
-      🇧🇫 🇨🇮 🇲🇱 🇸🇳 Burkina Faso, Côte d'Ivoire, Mali, Sénégal
+<section id="loginScreen">
+
+  <div class="login-card">
+
+    <div class="admin-logo">N</div>
+
+    <div class="login-title">
+      NOA DIGIT TRADE
     </div>
 
-    <button
-      type="button"
-      id="installAppBtn"
-      style="display: none; margin-top: 12px; background: #ffffff; color: #07d953; border: none; border-radius: 999px; padding: 10px 20px; font-weight: 700; font-size: 14px; cursor: pointer;"
-    >
-      📲 Installer l'application
-    </button>
-  </header>
+    <div class="login-subtitle">
+      Espace d'administration sécurisé
+    </div>
 
-  <main class="content">
+    <div id="loginMessage"></div>
 
-    <div id="appMessage"></div>
+    <form id="adminLoginForm">
 
-    <!-- ================= CONTENU PUBLIC (SEO) ================= -->
+      <div class="field">
+        <label for="adminEmail">
+          Email administrateur
+        </label>
 
-    <section class="card" style="margin-bottom: 16px;">
-
-      <div class="card-title">
-        Acheter et vendre des USDT en Afrique de l'Ouest
-      </div>
-
-      <div class="card-description">
-        FASO DIGIT TRADE est une plateforme qui permet d'acheter et de
-        vendre des USDT (une cryptomonnaie stable, indexée sur le dollar)
-        simplement et en toute sécurité, au Burkina Faso, en Côte d'Ivoire,
-        au Mali et au Sénégal. Les paiements se font via Orange Money ou
-        Wave, et les USDT sont envoyés sur les réseaux TRC20 ou BEP20,
-        selon votre préférence.
-      </div>
-
-      <div style="margin-top: 16px;">
-
-        <details style="margin-bottom: 10px;">
-          <summary style="font-weight: 700; cursor: pointer;">
-            Comment acheter des USDT au Burkina Faso ?
-          </summary>
-          <p class="small" style="margin-top: 8px;">
-            Créez un compte sur FASO DIGIT TRADE, choisissez "Acheter",
-            indiquez le montant en FCFA, sélectionnez le réseau USDT
-            (TRC20 ou BEP20) et votre moyen de paiement (Orange Money ou
-            Wave), puis suivez les instructions pour finaliser votre
-            paiement. Vos USDT sont envoyés dès la confirmation.
-          </p>
-        </details>
-
-        <details style="margin-bottom: 10px;">
-          <summary style="font-weight: 700; cursor: pointer;">
-            Comment vendre des USDT et recevoir du FCFA ?
-          </summary>
-          <p class="small" style="margin-top: 8px;">
-            Choisissez "Vendre", indiquez la quantité d'USDT, le réseau
-            utilisé, et le numéro sur lequel vous souhaitez recevoir vos
-            FCFA (Orange Money ou Wave). Envoyez ensuite vos USDT à
-            l'adresse de dépôt indiquée pour recevoir votre paiement.
-          </p>
-        </details>
-
-        <details style="margin-bottom: 10px;">
-          <summary style="font-weight: 700; cursor: pointer;">
-            Quels pays sont couverts par FASO DIGIT TRADE ?
-          </summary>
-          <p class="small" style="margin-top: 8px;">
-            La plateforme est actuellement disponible pour les clients
-            situés au 🇧🇫 Burkina Faso, en 🇨🇮 Côte d'Ivoire, au 🇲🇱 Mali
-            et au 🇸🇳 Sénégal.
-          </p>
-        </details>
-
-        <details>
-          <summary style="font-weight: 700; cursor: pointer;">
-            Quels moyens de paiement sont acceptés ?
-          </summary>
-          <p class="small" style="margin-top: 8px;">
-            Orange Money et Wave sont actuellement pris en charge pour les
-            achats et les ventes d'USDT sur la plateforme.
-          </p>
-        </details>
-
-      </div>
-
-    </section>
-
-    <!-- ================= AUTH ================= -->
-
-    <section id="authPage" class="page active">
-
-      <div class="card">
-
-        <div class="card-title">
-          Bienvenue
-        </div>
-
-        <div class="card-description">
-          Connectez-vous ou créez votre compte pour acheter ou vendre des USDT.
-        </div>
-
-        <div class="auth-tabs">
-
-          <button
-            type="button"
-            class="auth-tab active"
-            id="loginTab"
-          >
-            Connexion
-          </button>
-
-          <button
-            type="button"
-            class="auth-tab"
-            id="registerTab"
-          >
-            Inscription
-          </button>
-
-        </div>
-
-        <!-- CONNEXION -->
-
-        <form
-          id="loginForm"
-          class="auth-form active"
+        <input
+          type="email"
+          id="adminEmail"
+          placeholder="admin@email.com"
+          autocomplete="username"
+          required
         >
-
-          <div class="field">
-
-            <label for="loginEmail">
-              Adresse email
-            </label>
-
-            <input
-              type="email"
-              id="loginEmail"
-              placeholder="exemple@email.com"
-              autocomplete="email"
-              required
-            >
-
-          </div>
-
-          <div class="field">
-
-            <label for="loginPassword">
-              Mot de passe
-            </label>
-
-            <div class="password-wrapper">
-
-              <input
-                type="password"
-                id="loginPassword"
-                placeholder="Votre mot de passe"
-                autocomplete="current-password"
-                required
-              >
-
-              <button
-                type="button"
-                class="password-toggle"
-                data-password-target="loginPassword"
-                aria-label="Afficher le mot de passe"
-              >
-                👁️
-              </button>
-
-            </div>
-
-            <div
-              class="small forgot-password-link"
-              id="forgotPasswordLink"
-            >
-              Mot de passe oublié ?
-            </div>
-
-          </div>
-
-          <button
-            type="submit"
-            class="btn btn-primary"
-          >
-            Se connecter
-          </button>
-
-        </form>
-
-        <!-- MOT DE PASSE OUBLIÉ -->
-
-        <form
-          id="forgotPasswordForm"
-          class="auth-form"
-        >
-
-          <div class="card-description">
-            Saisissez l'adresse email de votre compte, nous vous enverrons
-            un lien pour réinitialiser votre mot de passe.
-          </div>
-
-          <div class="field">
-
-            <label for="forgotPasswordEmail">
-              Adresse email
-            </label>
-
-            <input
-              type="email"
-              id="forgotPasswordEmail"
-              placeholder="exemple@email.com"
-              autocomplete="email"
-              required
-            >
-
-          </div>
-
-          <button
-            type="submit"
-            class="btn btn-primary"
-          >
-            Envoyer le lien de réinitialisation
-          </button>
-
-          <button
-            type="button"
-            class="btn btn-secondary"
-            id="backToLoginBtn"
-          >
-            Retour à la connexion
-          </button>
-
-        </form>
-
-        <!-- INSCRIPTION -->
-
-        <form
-          id="registerForm"
-          class="auth-form"
-        >
-
-          <div class="info-box">
-            🇧🇫 🇨🇮 🇲🇱 🇸🇳 FASO DIGIT TRADE est réservé aux clients situés au Burkina Faso, en Côte d'Ivoire, au Mali ou au Sénégal.
-          </div>
-
-          <div class="field">
-
-            <label for="registerName">
-              Nom et prénom
-            </label>
-
-            <input
-              type="text"
-              id="registerName"
-              placeholder="Votre nom complet"
-              autocomplete="name"
-              required
-            >
-
-          </div>
-
-          <div class="field">
-
-            <label for="registerPhone">
-              Numéro de téléphone
-            </label>
-
-            <div class="phone-input-wrapper">
-
-              <div
-                class="phone-prefix"
-                id="registerPhonePrefix"
-              >
-                🇧🇫 +226
-              </div>
-
-              <input
-                type="tel"
-                id="registerPhone"
-                placeholder="70 00 00 00"
-                autocomplete="tel"
-                inputmode="numeric"
-                maxlength="17"
-                required
-              >
-
-            </div>
-
-          </div>
-
-          <div class="field">
-
-            <label for="registerCountry">
-              Pays
-            </label>
-
-            <select
-              id="registerCountry"
-              required
-            >
-
-              <option value="Burkina Faso">
-                🇧🇫 Burkina Faso
-              </option>
-
-              <option value="Côte d'Ivoire">
-                🇨🇮 Côte d'Ivoire
-              </option>
-
-              <option value="Mali">
-                🇲🇱 Mali
-              </option>
-
-              <option value="Sénégal">
-                🇸🇳 Sénégal
-              </option>
-
-            </select>
-
-          </div>
-
-          <div class="field">
-
-            <label for="registerReferralCode">
-              Code de parrainage (optionnel)
-            </label>
-
-            <input
-              type="text"
-              id="registerReferralCode"
-              placeholder="Ex: FASOINOU123"
-              style="text-transform: uppercase;"
-            >
-
-          </div>
-
-          <div class="field">
-
-            <label for="registerEmail">
-              Adresse email
-            </label>
-
-            <input
-              type="email"
-              id="registerEmail"
-              placeholder="exemple@email.com"
-              autocomplete="email"
-              required
-            >
-
-          </div>
-
-          <div class="field">
-
-            <label for="registerPassword">
-              Mot de passe
-            </label>
-
-            <div class="password-wrapper">
-
-              <input
-                type="password"
-                id="registerPassword"
-                placeholder="Minimum 6 caractères"
-                minlength="6"
-                autocomplete="new-password"
-                required
-              >
-
-              <button
-                type="button"
-                class="password-toggle"
-                data-password-target="registerPassword"
-                aria-label="Afficher le mot de passe"
-              >
-                👁️
-              </button>
-
-            </div>
-
-          </div>
-
-          <div class="field">
-
-            <label for="registerPasswordConfirm">
-              Confirmer le mot de passe
-            </label>
-
-            <div class="password-wrapper">
-
-              <input
-                type="password"
-                id="registerPasswordConfirm"
-                placeholder="Répétez le mot de passe"
-                minlength="6"
-                autocomplete="new-password"
-                required
-              >
-
-              <button
-                type="button"
-                class="password-toggle"
-                data-password-target="registerPasswordConfirm"
-                aria-label="Afficher la confirmation du mot de passe"
-              >
-                👁️
-              </button>
-
-            </div>
-
-          </div>
-
-          <div class="warning-box">
-
-            ⚠️ Utilisez obligatoirement vos informations personnelles
-            réelles pour créer votre compte et effectuer/valider vos paiements.
-
-          </div>
-
-          <button
-            type="submit"
-            class="btn btn-primary"
-          >
-            Créer mon compte
-          </button>
-
-        </form>
-
-        <!-- VÉRIFICATION EMAIL (CODE OTP) -->
-
-        <form
-          id="otpForm"
-          class="auth-form"
-        >
-
-          <div class="card-description">
-            Un code à 6 chiffres a été envoyé à
-            <strong id="otpEmailDisplay"></strong>.
-            Saisissez-le ci-dessous pour activer votre compte.
-          </div>
-
-          <div class="field">
-
-            <label for="otpCode">
-              Code de vérification
-            </label>
-
-            <input
-              type="text"
-              id="otpCode"
-              placeholder="123456"
-              inputmode="numeric"
-              autocomplete="one-time-code"
-              maxlength="6"
-              required
-            >
-
-          </div>
-
-          <button
-            type="submit"
-            class="btn btn-primary"
-          >
-            Vérifier le code
-          </button>
-
-          <div
-            class="small forgot-password-link"
-            id="resendOtpLink"
-          >
-            Renvoyer le code
-          </div>
-
-          <button
-            type="button"
-            class="btn btn-secondary"
-            id="backToRegisterBtn"
-          >
-            Retour à l'inscription
-          </button>
-
-        </form>
-
       </div>
 
-      <div class="card center">
+      <div class="field">
+        <label for="adminPassword">
+          Mot de passe
+        </label>
 
-        <div class="small">
+        <input
+          type="password"
+          id="adminPassword"
+          placeholder="Votre mot de passe"
+          autocomplete="current-password"
+          required
+        >
+      </div>
 
-          En utilisant FASO DIGIT TRADE, vous acceptez de fournir
-          des informations exactes afin de sécuriser vos transactions.
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="width:100%;"
+      >
+        Se connecter à l'administration
+      </button>
 
+    </form>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     APPLICATION ADMIN
+========================================================== -->
+
+<div id="adminApp" class="hidden">
+
+  <header class="admin-header">
+
+    <div class="header-inner">
+
+      <div class="brand-area">
+
+        <h1>NOA DIGIT TRADE</h1>
+
+        <p>Panneau d'administration</p>
+
+        <div class="admin-badge">
+          🔐 ADMINISTRATEUR
         </div>
 
       </div>
 
-    </section>
-
-
-    <!-- ================= APPLICATION ================= -->
-
-    <section
-      id="appPage"
-      class="page"
-    >
-
-      <div class="user-bar">
-
-        <div>
-
-          <div
-            id="userName"
-            class="user-name"
-          >
-            Utilisateur
-          </div>
-
-          <div
-            id="userCountry"
-            class="user-country"
-          >
-            🇧🇫 Burkina Faso
-          </div>
-
-        </div>
+      <div class="header-actions">
 
         <button
           type="button"
-          id="logoutBtn"
-          class="logout-btn"
+          id="installAdminBtn"
+          class="logout-header"
+          style="display:none;"
+        >
+          📲 Installer
+        </button>
+
+        <button
+          type="button"
+          id="notifBellBtn"
+          class="notif-bell-btn"
+        >
+          🔔
+          <span
+            id="notifBadge"
+            class="notif-badge hidden"
+          >0</span>
+        </button>
+
+        <button
+          type="button"
+          id="logoutAdminBtn"
+          class="logout-header"
         >
           Déconnexion
         </button>
 
       </div>
 
+    </div>
 
-      <!-- ================= ACCUEIL ================= -->
+  </header>
 
-      <div
-        id="homePage"
-        class="sub-page active"
+
+  <div
+    id="notifPanel"
+    class="notif-panel hidden"
+  >
+
+    <div class="notif-panel-header">
+
+      <strong>Notifications</strong>
+
+      <button
+        type="button"
+        id="notifClearBtn"
       >
+        Tout effacer
+      </button>
 
-        <div class="card">
+    </div>
 
-          <div class="card-title">
-            FASO DIGIT TRADE
-          </div>
+    <div id="notifList" class="notif-list">
 
-          <div class="card-description">
-            Achetez ou vendez vos USDT simplement et en toute sécurité
-            au Burkina Faso, en Côte d'Ivoire, au Mali et au Sénégal.
-          </div>
-
-          <button
-            type="button"
-            id="goBuyBtn"
-            class="btn btn-primary"
-          >
-            Acheter des USDT
-          </button>
-
-          <button
-            type="button"
-            id="goSellBtn"
-            class="btn btn-secondary"
-          >
-            Vendre des USDT
-          </button>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-title">
-            Tarifs actuels
-          </div>
-
-          <div class="summary">
-
-            <div class="summary-row">
-              <span>Taux achat</span>
-              <strong>
-                <span id="homeBuyRate">600</span> FCFA
-              </strong>
-            </div>
-
-            <div class="summary-row">
-              <span>Taux vente</span>
-              <strong>
-                <span id="homeSellRate">570</span> FCFA
-              </strong>
-            </div>
-
-            <div class="summary-row">
-              <span>Commande minimum</span>
-              <strong>
-                <span id="homeMinOrder">2 000</span> FCFA
-              </strong>
-            </div>
-
-            <div class="summary-row">
-              <span>Commande maximum</span>
-              <strong>
-                <span id="homeMaxOrder">50 000</span> FCFA
-              </strong>
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-title">
-            Réseaux disponibles
-          </div>
-
-          <div class="summary">
-
-            <div class="summary-row">
-
-              <span>USDT TRC20</span>
-
-              <strong>
-                Frais :
-                <span id="homeTrc20Fee">2</span> USDT
-              </strong>
-
-            </div>
-
-            <div class="summary-row">
-
-              <span>USDT BEP20</span>
-
-              <strong>
-                Frais :
-                <span id="homeBp20Fee">0</span> USDT
-              </strong>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- ================= ECHANGE ================= -->
-
-      <div
-        id="exchangePage"
-        class="sub-page hidden"
-      >
-
-        <div class="card">
-
-          <div class="card-title">
-            Nouvelle commande
-          </div>
-
-          <div class="card-description">
-            Vérifiez attentivement le montant, le taux et les frais
-            avant de placer votre ordre.
-          </div>
-
-
-          <div class="exchange-tabs">
-
-            <button
-              type="button"
-              id="buyTab"
-              class="exchange-tab active"
-            >
-              Acheter
-            </button>
-
-            <button
-              type="button"
-              id="sellTab"
-              class="exchange-tab"
-            >
-              Vendre
-            </button>
-
-          </div>
-
-
-          <div
-            class="balance-box"
-            id="availableBalanceBox"
-          >
-
-            <span>Solde disponible</span>
-
-            <strong id="availableBalanceValue">
-              -
-            </strong>
-
-          </div>
-
-          <div
-            class="balance-alert"
-            id="insufficientBalanceAlert"
-          >
-            ⚠️ Le solde disponible est insuffisant pour ce montant.
-            Merci de réduire le montant ou de réessayer plus tard.
-          </div>
-
-
-          <div class="amount-box">
-
-            <div
-              class="amount-label"
-              id="amountLabel"
-            >
-              Montant à payer
-            </div>
-
-            <input
-              type="number"
-              id="amountInput"
-              class="amount-input"
-              min="2000"
-              max="50000"
-              step="any"
-              placeholder="0"
-              inputmode="decimal"
-              autocomplete="off"
-            >
-
-            <div
-              class="amount-unit"
-              id="amountUnit"
-            >
-              FCFA
-            </div>
-
-          </div>
-
-
-          <div class="field">
-
-            <label>
-              Réseau USDT
-            </label>
-
-            <select
-              id="networkSelect"
-              class="network-select"
-            >
-
-              <option value="trc20">USDT TRC20</option>
-              <option value="bp20">USDT BEP20</option>
-              <option value="plasma">USDT Plasma (USDT0)</option>
-              <option value="uid">ID Binance</option>
-              <option value="id">UID OKX</option>
-
-            </select>
-
-            <div class="small" style="margin-top: 6px; opacity: 0.85;">
-              Frais réseau :
-              <span id="networkFeeLabel">2 USDT</span>
-            </div>
-
-          </div>
-
-
-          <div
-  class="field"
-  id="paymentMethodField"
->
-  <label for="paymentMethod" id="paymentMethodLabel">
-    Moyen de paiement
-  </label>
-
-  <input type="hidden" id="paymentMethod" value="orange_money">
-
-  <div style="position: relative;">
-
-    <button
-      type="button"
-      id="paymentMethodTrigger"
-      style="width: 100%; display: flex; align-items: center; justify-content: space-between; background: #0b3a1c; border: 1px solid #2a8a4d; border-radius: 14px; padding: 12px 16px; cursor: pointer;"
-    >
-      <span style="display: flex; align-items: center; gap: 10px;">
-        <span id="paymentMethodIcon" style="color: #FF7900; font-size: 16px; font-weight: 900;">↗↙</span>
-        <span id="paymentMethodText" style="color: #FF7900; font-weight: 700; font-size: 16px;">Orange Money</span>
-      </span>
-      <span style="color: #e0ca8a; font-size: 14px;">▾</span>
-    </button>
-
-    <div
-      id="paymentMethodPanel"
-      style="display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: #0b3a1c; border: 1px solid #2a8a4d; border-radius: 14px; overflow: hidden; z-index: 20;"
-    >
-
-      <div
-        class="payment-method-row"
-        id="orangeMoneyOption"
-        data-value="orange_money"
-        data-icon="↗↙"
-        data-icon-color="#FF7900"
-        data-label="Orange Money"
-        style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; cursor: pointer; color: #FF7900; font-weight: 700;"
-      >
-        <span style="color: #FF7900; font-size: 16px; font-weight: 900;">↗↙</span>
-        Orange Money
-      </div>
-
-      <div
-        class="payment-method-row"
-        id="waveOption"
-        data-value="wave"
-        data-icon="🐧"
-        data-icon-color="#1df56c"
-        data-label="Wave"
-        style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; cursor: pointer; color: #ffffff; font-weight: 700; border-top: 1px solid #2a8a4d;"
-      >
-        <span style="background: #1df56c; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px;">🐧</span>
-        Wave
+      <div class="notif-empty">
+        Aucune notification pour le moment.
       </div>
 
     </div>
 
   </div>
-</div>
-          
-
-          <!-- ADRESSE PORTEFEUILLE -->
-
-          <div class="field">
-
-            <label
-              for="walletAddress"
-              id="walletLabel"
-            >
-              Adresse de portefeuille USDT
-            </label>
-
-            <input
-              type="text"
-              id="walletAddress"
-              class="wallet-input"
-              placeholder="Collez votre adresse USDT ici"
-              autocomplete="off"
-              autocapitalize="none"
-              spellcheck="false"
-              required
-            >
-
-            <div class="small wallet-help">
-
-              ⚠️ Saisissez l'adresse du portefeuille USDT utilisée
-              pour cette transaction.
-
-              Vérifiez qu'elle correspond exactement au réseau sélectionné.
-
-            </div>
-
-          </div>
 
 
-          <div class="summary">
+  <main class="admin-container">
 
-            <div class="summary-row">
-
-              <span>Taux</span>
-
-              <strong id="summaryRate">
-                600 FCFA / USDT
-              </strong>
-
-            </div>
-
-            <div class="summary-row">
-
-              <span id="summaryCfaLabel">
-                Montant FCFA
-              </span>
-
-              <strong id="summaryCfa">
-                0 FCFA
-              </strong>
-
-            </div>
-
-            <div class="summary-row">
-
-              <span id="summaryUsdtLabel">
-                Montant USDT
-              </span>
-
-              <strong id="summaryUsdt">
-                0 USDT
-              </strong>
-
-            </div>
-
-            <div class="summary-row">
-
-              <span>
-                Frais réseau
-              </span>
-
-              <strong id="summaryFee">
-                0 USDT
-              </strong>
-
-            </div>
-
-            <div class="summary-row summary-total">
-
-              <span id="summaryResultLabel">
-                Vous recevrez
-              </span>
-
-              <strong id="summaryResult">
-                0 USDT
-              </strong>
-
-            </div>
-
-          </div>
+    <div id="adminMessage"></div>
 
 
-          <div
-            class="info-box mt"
-            id="exchangeInfo"
-          >
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
 
-            💡 Minimum :
-            <strong>2 000 FCFA</strong>
+    <nav class="admin-nav">
 
-            <br>
+      <button
+        type="button"
+        class="admin-nav-btn active"
+        data-page="dashboardPage"
+      >
+        📊 Tableau de bord
+      </button>
 
-            Maximum :
-            <strong>50 000 FCFA</strong>
+      <button
+        type="button"
+        class="admin-nav-btn"
+        data-page="ordersAdminPage"
+      >
+        📋 Commandes
+      </button>
 
-            <br>
+      <button
+        type="button"
+        class="admin-nav-btn"
+        data-page="ratesAdminPage"
+      >
+        💰 Tarifs
+      </button>
 
-            Le montant exact et les frais sont affichés
-            avant la confirmation.
+      <button
+        type="button"
+        class="admin-nav-btn"
+        data-page="usersAdminPage"
+      >
+        👥 Utilisateurs
+      </button>
 
-          </div>
+      <button
+        type="button"
+        class="admin-nav-btn"
+        data-page="disputesAdminPage"
+      >
+        💬 Litiges
+      </button>
+
+    </nav>
 
 
-          <button
-            type="button"
-            id="reviewOrderBtn"
-            class="btn btn-primary"
-          >
-            Vérifier la commande
-          </button>
+    <!-- =====================================================
+         DASHBOARD
+    ====================================================== -->
 
-          <button
-            type="button"
-            id="backHomeBtn"
-            class="btn btn-secondary"
-          >
-            Retour
-          </button>
+    <section
+      id="dashboardPage"
+      class="admin-page active"
+    >
 
+      <div class="dashboard-grid">
+
+        <div class="stat-card">
+          <div class="stat-label">Total commandes</div>
+          <div id="statOrders" class="stat-value">0</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">En attente</div>
+          <div id="statPending" class="stat-value">0</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">En traitement</div>
+          <div id="statProcessing" class="stat-value">0</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Utilisateurs</div>
+          <div id="statUsers" class="stat-value">0</div>
         </div>
 
       </div>
 
 
-      <!-- ================= CONFIRMATION ================= -->
+      <div class="card">
 
-      <div
-        id="confirmationPage"
-        class="sub-page hidden"
-      >
+        <div class="card-header">
 
-        <div class="card">
+          <div>
+            <div class="card-title">
+              Configuration actuelle
+            </div>
 
-          <div class="card-title">
-            Vérification de votre commande
-          </div>
-
-          <div class="card-description">
-            Vérifiez toutes les informations avant de placer
-            définitivement votre ordre.
-          </div>
-
-          <div
-            id="confirmationSummary"
-            class="summary"
-          ></div>
-
-          <div class="warning-box">
-
-            ⚠️ Vérifiez attentivement le montant,
-            le réseau et l'adresse de portefeuille USDT
-            avant de placer la commande.
-
+            <div class="card-description">
+              Paramètres utilisés par l'application client.
+            </div>
           </div>
 
           <button
             type="button"
-            id="placeOrderBtn"
-            class="btn btn-primary"
-          >
-            Placer la commande
-          </button>
-
-          <button
-            type="button"
-            id="cancelReviewBtn"
-            class="btn btn-secondary"
+            class="btn btn-secondary btn-small"
+            data-go-page="ratesAdminPage"
           >
             Modifier
           </button>
 
         </div>
 
-      </div>
 
+        <div class="form-grid-4">
 
-      <!-- ================= PAIEMENT ================= -->
-
-      <div
-        id="paymentPage"
-        class="sub-page hidden"
-      >
-
-        <div class="card">
-
-          <div class="card-title">
-            Effectuez votre paiement
+          <div class="setting-box">
+            <div class="setting-title">Achat</div>
+            <strong>
+              <span id="dashboardBuyRate">—</span>
+              FCFA
+            </strong>
           </div>
 
-          <div
-            class="card-description"
-            id="paymentDescription"
-          >
-            Votre commande a été enregistrée.
-            Effectuez maintenant votre paiement.
+          <div class="setting-box">
+            <div class="setting-title">Vente</div>
+            <strong>
+              <span id="dashboardSellRate">—</span>
+              FCFA
+            </strong>
           </div>
 
-
-          <div class="payment-amount-box">
-
-            <div class="payment-amount-label">
-              Montant à payer
-            </div>
-
-            <div
-              id="paymentAmountValue"
-              class="payment-amount-value"
-            >
-              0 FCFA
-            </div>
-
+          <div class="setting-box">
+            <div class="setting-title">TRC20</div>
+            <strong>
+              <span id="dashboardTrc20Fee">—</span>
+              USDT
+            </strong>
           </div>
 
-
-          <!-- QR CODE -->
-
-          <div class="payment-qr-box">
-
-            <div
-              class="payment-qr-text"
-              id="qrInstructionText"
-            >
-
-              Scannez le QR code avec votre téléphone
-              pour effectuer le paiement.
-
-            </div>
-
-            <div id="orangeMoneyQr"></div>
-
+          <div class="setting-box">
+            <div class="setting-title">BEP20</div>
+            <strong>
+              <span id="dashboardBp20Fee">—</span>
+              USDT
+            </strong>
           </div>
 
-
-          <div class="payment-or">
-            OU
-          </div>
-
-
-          <!-- BOUTON ORANGE MONEY -->
-
-          <button
-            type="button"
-            id="orangeMoneyPayBtn"
-            class="btn btn-primary payment-main-button"
-          >
-            CLIQUEZ ICI POUR EFFECTUER LE PAIEMENT
-          </button>
-
-
-          <div class="payment-security-box">
-
-            🔒 Paiement sécurisé — vérifiez toujours
-            le montant avant de valider.
-
-          </div>
-
-
-          <div class="warning-box mt">
-
-            ⚠️ Utilisez obligatoirement votre propre
-            compte Orange Money.
-
-            <br><br>
-
-            Ne partagez jamais votre mot de passe,
-            votre code secret ou votre code de validation.
-
-          </div>
-
-
-          <div class="proof-upload-label">
-            Preuve de paiement (capture d'écran)
-          </div>
-
-          <div id="proofDropzone" class="dropzone">
-
-            <input
-              type="file"
-              id="proofFileInput"
-              accept="image/png,image/jpeg,image/webp"
-              hidden
-            >
-
-            <div id="proofDropzoneContent">
-              <div class="dropzone-icon">📎</div>
-              <div class="dropzone-text">
-                Glissez votre capture ici ou <span class="dropzone-link">parcourir</span>
-              </div>
-              <div class="dropzone-hint">JPG, PNG ou WEBP — 5 Mo maximum</div>
-            </div>
-
-            <div id="proofPreviewWrap" class="proof-preview-wrap hidden">
-              <img id="proofPreviewImg" class="proof-preview-img" alt="Aperçu de la preuve de paiement">
-              <br>
-              <button type="button" id="proofRemoveBtn" class="proof-remove-btn">✕ Retirer</button>
-            </div>
-
-          </div>
-
-          <div id="proofUploadStatus"></div>
-
-
-          <button
-            type="button"
-            id="paymentDoneBtn"
-            class="btn btn-primary"
-          >
-            J'AI EFFECTUÉ LE PAIEMENT
-          </button>
-
-
-          <button
-            type="button"
-            id="viewOrderBtn"
-            class="btn btn-secondary"
-          >
-            Voir ma commande
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <!-- ================= COMMANDES ================= -->
-
-      <div
-        id="ordersPage"
-        class="sub-page hidden"
-      >
-
-        <div class="card">
-
-          <div class="card-title">
-            Mes commandes
-          </div>
-
-          <div class="card-description">
-            Consultez l'état de vos ordres d'achat et de vente.
-          </div>
-
-          <div id="ordersList">
-
-            <div class="small center">
-              Chargement des commandes...
-            </div>
-
+          <div class="setting-box">
+            <div class="setting-title">PLASMA</div>
+            <strong>
+              <span id="dashboardPlasmaFee">—</span>
+              USDT
+            </strong>
           </div>
 
         </div>
@@ -3652,363 +1076,510 @@ a:hover{
       </div>
 
 
-      <!-- ================= SUPPORT ================= -->
+      <div class="card">
 
-      <div
-        id="supportPage"
-        class="sub-page hidden"
-      >
+        <div class="card-header">
 
-        <div class="card">
+          <div>
+            <div class="card-title">
+              Commandes récentes
+            </div>
 
-          <div class="card-title">
-            Service client
+            <div class="card-description">
+              Les dernières commandes reçues.
+            </div>
           </div>
 
-          <div class="card-description">
-            Un problème avec une transaction ?
-            Vous pouvez ouvrir un litige concernant une commande.
+          <button
+            type="button"
+            class="btn btn-secondary btn-small"
+            data-go-page="ordersAdminPage"
+          >
+            Toutes les commandes
+          </button>
+
+        </div>
+
+        <div id="recentOrders">
+          <div class="empty">
+            Chargement...
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COMMANDES
+    ====================================================== -->
+
+    <section
+      id="ordersAdminPage"
+      class="admin-page"
+    >
+
+      <div class="card">
+
+        <div class="card-header">
+
+          <div>
+            <div class="card-title">
+              Gestion des commandes
+            </div>
+
+            <div class="card-description">
+              Consultez et mettez à jour les commandes.
+            </div>
           </div>
 
-
-          <form id="disputeForm">
-
-            <div class="field">
-
-              <label for="disputeOrder">
-                Commande concernée
-              </label>
-
-              <select
-                id="disputeOrder"
-                required
-              >
-
-                <option value="">
-                  Sélectionner une commande
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div class="field">
-
-              <label for="disputeSubject">
-                Sujet
-              </label>
-
-              <input
-                type="text"
-                id="disputeSubject"
-                placeholder="Ex : paiement non confirmé"
-                required
-              >
-
-            </div>
-
-
-            <div class="field">
-
-              <label for="disputeMessage">
-                Décrivez votre problème
-              </label>
-
-              <textarea
-                id="disputeMessage"
-                placeholder="Expliquez votre problème..."
-                required
-              ></textarea>
-
-            </div>
-
-
-            <button
-              type="submit"
-              class="btn btn-primary"
-            >
-              Envoyer au service client
-            </button>
-
-          </form>
+          <button
+            type="button"
+            id="refreshOrdersBtn"
+            class="btn btn-secondary btn-small"
+          >
+            🔄 Actualiser
+          </button>
 
         </div>
 
 
-        <div class="card">
+        <div class="form-grid">
 
-          <div class="card-title">
-            Mes litiges
+          <div class="field">
+            <label for="orderStatusFilter">
+              Filtrer par statut
+            </label>
+
+            <select id="orderStatusFilter">
+              <option value="">Tous les statuts</option>
+              <option value="pending">En attente</option>
+              <option value="processing">En traitement</option>
+              <option value="completed">Terminée</option>
+              <option value="cancelled">Annulée</option>
+            </select>
           </div>
 
-          <div id="disputesList">
 
-            <div class="small center">
-              Aucun litige chargé.
-            </div>
+          <div class="field">
+            <label for="orderTypeFilter">
+              Type de commande
+            </label>
 
+            <select id="orderTypeFilter">
+              <option value="">Achat + Vente</option>
+              <option value="buy">Achat</option>
+              <option value="sell">Vente</option>
+            </select>
           </div>
 
+        </div>
+
+
+        <div id="ordersList" class="orders-list">
+          <div class="empty">Chargement...</div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TARIFS
+    ====================================================== -->
+
+    <section
+      id="ratesAdminPage"
+      class="admin-page"
+    >
+
+      <div class="card">
+
+        <div class="card-title">
+          Paramètres commerciaux
+        </div>
+
+        <div class="card-description">
+          Ces paramètres sont utilisés pour calculer
+          les commandes des clients.
         </div>
 
       </div>
 
 
-      <!-- ================= PROFIL ================= -->
+      <form id="settingsForm">
 
-      <div
-        id="profilePage"
-        class="sub-page hidden"
-      >
+        <div class="form-grid">
 
-        <div class="card">
+          <div class="card">
 
-          <div class="card-title">
-            Mon profil
-          </div>
-
-
-          <div class="field">
-
-            <label>
-              Nom et prénom
-            </label>
-
-            <input
-              type="text"
-              id="profileName"
-              readonly
-            >
-
-          </div>
-
-
-          <div class="field">
-
-            <label>
-              Téléphone
-            </label>
-
-            <input
-              type="tel"
-              id="profilePhone"
-              readonly
-            >
-
-          </div>
-
-
-          <div class="field">
-
-            <label>
-              Pays
-            </label>
-
-            <input
-              type="text"
-              id="profileCountry"
-              value="Burkina Faso"
-              readonly
-            >
-
-          </div>
-
-
-          <div class="info-box">
-
-            🇧🇫 🇨🇮 🇲🇱 🇸🇳 Votre compte est configuré
-            pour le pays choisi à l'inscription.
-
-          </div>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-title">
-            Sécurité
-          </div>
-
-          <div class="small">
-
-            Pour votre sécurité, ne communiquez jamais
-            votre mot de passe, votre code Orange Money
-            ou vos codes de validation à une autre personne.
-
-          </div>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-title">
-            🎁 Mon parrainage
-          </div>
-
-          <div class="field">
-
-            <label>
-              Mon code de parrainage
-            </label>
-
-            <input
-              type="text"
-              id="referralCodeDisplay"
-              readonly
-            >
-
-            <button
-              type="button"
-              id="copyReferralCodeBtn"
-              class="btn btn-secondary"
-              style="width:100%; margin-top:8px;"
-            >
-              Copier
-            </button>
-
-          </div>
-
-          <div class="field">
-
-            <label>
-              Mon lien de parrainage
-            </label>
-
-            <input
-              type="text"
-              id="referralLinkDisplay"
-              readonly
-            >
-
-            <button
-              type="button"
-              id="copyReferralLinkBtn"
-              class="btn btn-secondary"
-              style="width:100%; margin-top:8px;"
-            >
-              Copier le lien
-            </button>
-
-            <button
-              type="button"
-              id="shareReferralLinkBtn"
-              class="btn btn-primary"
-              style="width:100%; margin-top:8px;"
-            >
-              Partager le lien
-            </button>
-
-          </div>
-
-          <div class="small">
-            Partagez ce lien ou ce code : chaque filleul qui s'inscrit
-            avec vous vous rapporte une commission sur ses transactions.
-          </div>
-
-
-          <div class="field">
-
-            <label>
-              Solde de commissions
-            </label>
-
-            <input
-              type="text"
-              id="referralBalanceDisplay"
-              readonly
-            >
-
-          </div>
-
-
-          <button
-            type="button"
-            id="openWithdrawalBtn"
-            class="btn btn-primary"
-          >
-            Demander un retrait
-          </button>
-
-          <div
-            id="withdrawalForm"
-            class="hidden"
-            style="margin-top:16px;"
-          >
+            <div class="setting-title">
+              💰 Taux d'achat
+            </div>
 
             <div class="field">
 
-              <label for="withdrawalAmount">
-                Montant à retirer (FCFA)
+              <label for="buyRate">
+                FCFA pour 1 USDT
               </label>
 
               <input
                 type="number"
-                id="withdrawalAmount"
-                min="5000"
-                step="500"
-                placeholder="Minimum 5000 FCFA"
+                id="buyRate"
+                min="0"
+                step="0.01"
+                required
               >
 
+            </div>
+
+            <div class="setting-help">
+              Prix auquel NOA DIGIT TRADE vend les USDT
+              aux clients.
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="setting-title">
+              💵 Taux de vente
             </div>
 
             <div class="field">
 
-              <label for="withdrawalMethod">
-                Méthode de retrait
-              </label>
-
-              <select id="withdrawalMethod">
-                <option value="cash">Cash (Mobile Money)</option>
-                <option value="usdt">USDT</option>
-              </select>
-
-            </div>
-
-            <div
-              class="field"
-              id="withdrawalPhoneField"
-            >
-
-              <label for="withdrawalPhone">
-                Numéro Mobile Money
+              <label for="sellRate">
+                FCFA pour 1 USDT
               </label>
 
               <input
-                type="tel"
-                id="withdrawalPhone"
-                placeholder="Ex: 70000000"
+                type="number"
+                id="sellRate"
+                min="0"
+                step="0.01"
+                required
               >
 
             </div>
 
-            <div
-              class="field hidden"
-              id="withdrawalWalletField"
-            >
+            <div class="setting-help">
+              Prix auquel NOA DIGIT TRADE achète les USDT
+              aux clients.
+            </div>
 
-              <label for="withdrawalWallet">
-                Adresse wallet USDT
+          </div>
+
+
+          <div class="card">
+
+            <div class="setting-title">
+              ⛓️ Frais USDT TRC20
+            </div>
+
+            <div class="field">
+
+              <label for="trc20FeeInput">
+                Frais en USDT
               </label>
 
               <input
-                type="text"
-                id="withdrawalWallet"
-                placeholder="Adresse USDT (réseau TRC20/BEP20...)"
+                type="number"
+                id="trc20FeeInput"
+                min="0"
+                step="0.01"
+                required
               >
 
             </div>
 
-            <button
-              type="button"
-              id="submitWithdrawalBtn"
-              class="btn btn-primary"
-            >
-              Confirmer la demande
-            </button>
+          </div>
 
+
+          <div class="card">
+
+            <div class="setting-title">
+              ⛓️ Frais USDT BEP20
+            </div>
+
+            <div class="field">
+
+              <label for="bp20FeeInput">
+                Frais en USDT
+              </label>
+
+              <input
+                type="number"
+                id="bp20FeeInput"
+                min="0"
+                step="0.01"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="setting-title">
+              ⛓️ Frais USDT Plasma (USDT0)
+            </div>
+
+            <div class="field">
+
+              <label for="plasmaFeeInput">
+                Frais en USDT
+              </label>
+
+              <input
+                type="number"
+                id="plasmaFeeInput"
+                min="0"
+                step="0.01"
+                required
+              >
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-title">
+            💼 Soldes disponibles
+          </div>
+
+          <div class="card-description">
+            Ces soldes déterminent si les clients peuvent passer
+            une commande. Mets-les à jour selon ta trésorerie réelle.
+          </div>
+
+
+          <div class="form-grid">
+
+            <div class="field">
+
+              <label for="usdtBalanceInput">
+                Solde USDT (pour les achats)
+              </label>
+
+              <input
+                type="number"
+                id="usdtBalanceInput"
+                min="0"
+                step="0.01"
+                required
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="fcfaBalanceInput">
+                Solde FCFA (pour les ventes)
+              </label>
+
+              <input
+                type="number"
+                id="fcfaBalanceInput"
+                min="0"
+                step="1"
+                required
+              >
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-title">
+            Limites de commande
+          </div>
+
+          <div class="card-description">
+            Définissez les montants minimum et maximum.
+          </div>
+
+
+          <div class="form-grid">
+
+            <div class="field">
+
+              <label for="minOrderInput">
+                Minimum — FCFA
+              </label>
+
+              <input
+                type="number"
+                id="minOrderInput"
+                min="0"
+                step="1"
+                required
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="maxOrderInput">
+                Maximum — FCFA
+              </label>
+
+              <input
+                type="number"
+                id="maxOrderInput"
+                min="0"
+                step="1"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <button
+            type="submit"
+            id="saveSettingsBtn"
+            class="btn btn-primary"
+          >
+            💾 Enregistrer les paramètres
+          </button>
+
+
+          <div class="save-info">
+            Les modifications sont enregistrées directement
+            dans la configuration administrateur Supabase.
+            Elles ne sont pas modifiables depuis l'espace client.
+          </div>
+
+        </div>
+
+      </form>
+
+    </section>
+
+
+    <!-- =====================================================
+         UTILISATEURS
+    ====================================================== -->
+
+    <section
+      id="usersAdminPage"
+      class="admin-page"
+    >
+
+      <div class="card">
+
+        <div class="card-header">
+
+          <div>
+            <div class="card-title">
+              Utilisateurs
+            </div>
+
+            <div class="card-description">
+              Liste des comptes clients enregistrés.
+            </div>
+          </div>
+
+          <button
+            type="button"
+            id="refreshUsersBtn"
+            class="btn btn-secondary btn-small"
+          >
+            🔄 Actualiser
+          </button>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+          <table>
+
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Téléphone</th>
+                <th>Email</th>
+                <th>Pays</th>
+                <th>Inscription</th>
+              </tr>
+            </thead>
+
+            <tbody id="usersTableBody">
+
+              <tr>
+                <td colspan="5">
+                  <div class="empty">
+                    Chargement...
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LITIGES
+    ====================================================== -->
+
+    <section
+      id="disputesAdminPage"
+      class="admin-page"
+    >
+
+      <div class="card">
+
+        <div class="card-header">
+
+          <div>
+            <div class="card-title">
+              Litiges clients
+            </div>
+
+            <div class="card-description">
+              Consultez les problèmes signalés par les clients.
+            </div>
+          </div>
+
+          <button
+            type="button"
+            id="refreshDisputesBtn"
+            class="btn btn-secondary btn-small"
+          >
+            🔄 Actualiser
+          </button>
+
+        </div>
+
+
+        <div id="disputesList">
+
+          <div class="empty">
+            Chargement...
           </div>
 
         </div>
@@ -4019,120 +1590,3079 @@ a:hover{
 
   </main>
 
-
-  <!-- ================= NAVIGATION ================= -->
-
-  <nav
-    id="bottomNav"
-    class="bottom-nav hidden"
-  >
-
-    <button
-      type="button"
-      class="nav-btn active"
-      data-page="homePage"
-    >
-      🏠<br>
-      Accueil
-    </button>
-
-    <button
-      type="button"
-      class="nav-btn"
-      data-page="exchangePage"
-    >
-      ⇄<br>
-      Échange
-    </button>
-
-    <button
-      type="button"
-      class="nav-btn"
-      data-page="ordersPage"
-    >
-      📋<br>
-      Commandes
-    </button>
-
-    <button
-      type="button"
-      class="nav-btn"
-      data-page="supportPage"
-    >
-      💬<br>
-      Support
-    </button>
-
-    <button
-      type="button"
-      class="nav-btn"
-      data-page="profilePage"
-    >
-      👤<br>
-      Profil
-    </button>
-
-  </nav>
-
-  <footer style="padding:16px 16px 90px;text-align:center;font-size:12px;color:#9ab5a4;">
-    Disponible aussi au
-    <a href="/burkina-faso/" style="color:#07d953;text-decoration:none;">Burkina Faso</a> ·
-    <a href="/cote-divoire/" style="color:#07d953;text-decoration:none;">Côte d'Ivoire</a> ·
-    <a href="/mali/" style="color:#07d953;text-decoration:none;">Mali</a> ·
-    <a href="/senegal/" style="color:#07d953;text-decoration:none;">Sénégal</a>
-  </footer>
-
 </div>
 
 
-<!-- SUPABASE -->
+<!-- =========================================================
+     SUPABASE
+========================================================== -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-
-<!-- QR CODE -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-
-<!-- APPLICATION -->
-
-<script src="app.js"></script>
-  <!-- Bannière de détection navigateur in-app (Facebook, Instagram, Messenger) -->
-<div id="inAppBrowserBanner" style="display:none; position:fixed; top:0; left:0; right:0; z-index:9999; background:#fff3cd; color:#664d03; padding:12px 16px; font-family:sans-serif; font-size:14px; text-align:center; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
-  ⚠️ Pour créer votre compte, ouvrez ce lien dans votre navigateur (Chrome/Safari).
-  <br>
-  <button onclick="copyLinkForBrowser()" style="margin-top:8px; padding:8px 16px; background:#0dfd64; color:#fff; border:none; border-radius:6px; font-size:14px;">
-    Copier le lien
-  </button>
-</div>
-
 <script>
-(function() {
-  var ua = navigator.userAgent || navigator.vendor || window.opera;
 
-  // Détecte Facebook, Instagram, Messenger in-app browsers
-  var isInApp = /FBAN|FBAV|Instagram|Messenger|FB_IAB/i.test(ua);
+/* ============================================================
+   NOA DIGIT TRADE
+   ADMIN
+   VERSION CORRIGÉE
+   ============================================================ */
 
-  if (isInApp) {
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('inAppBrowserBanner').style.display = 'block';
-      // Pousse le contenu vers le bas pour ne pas cacher le header
-      document.body.style.paddingTop = '90px';
-    });
-  }
-})();
+const SUPABASE_URL =
+  'https://vowafwsvrjpkhkocptih.supabase.co';
 
-function copyLinkForBrowser() {
-  var url = window.location.href;
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(url).then(function() {
-      alert('Lien copié ! Collez-le dans Chrome ou Safari pour continuer.');
-    });
+const SUPABASE_KEY =
+  'sb_publishable_umIa4749av8722xus6aQHw_1nf8b-PC';
+
+const supabaseClient =
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+
+/* ============================================================
+   VARIABLES
+============================================================ */
+
+let currentAdmin = null;
+let adminProfile = null;
+
+let allOrders = [];
+let allUsers = [];
+let allDisputes = [];
+
+let settings = null;
+
+let isCheckingSession = false;
+
+
+/* ============================================================
+   ELEMENTS
+============================================================ */
+
+const loginScreen =
+  document.getElementById('loginScreen');
+
+const adminApp =
+  document.getElementById('adminApp');
+
+const adminLoginForm =
+  document.getElementById('adminLoginForm');
+
+const logoutAdminBtn =
+  document.getElementById('logoutAdminBtn');
+
+const loginMessage =
+  document.getElementById('loginMessage');
+
+const adminMessage =
+  document.getElementById('adminMessage');
+
+
+/* ============================================================
+   MESSAGES
+============================================================ */
+
+function showLoginMessage(
+  message,
+  type = 'error'
+) {
+
+  if (!loginMessage) return;
+
+  loginMessage.textContent = message;
+  loginMessage.style.display = 'block';
+  loginMessage.style.padding = '12px 14px';
+  loginMessage.style.borderRadius = '10px';
+  loginMessage.style.marginBottom = '15px';
+  loginMessage.style.fontSize = '13px';
+  loginMessage.style.fontWeight = '700';
+
+  if (type === 'success') {
+
+    loginMessage.style.background = '#e8f8ef';
+    loginMessage.style.color = '#168447';
+
+  } else if (type === 'info') {
+
+    loginMessage.style.background = '#eaf3ff';
+    loginMessage.style.color = '#0757d9';
+
   } else {
-    prompt('Copiez ce lien et ouvrez-le dans Chrome ou Safari :', url);
+
+    loginMessage.style.background = '#feecec';
+    loginMessage.style.color = '#c62828';
+
   }
+
 }
+
+
+function hideLoginMessage() {
+
+  if (!loginMessage) return;
+
+  loginMessage.style.display = 'none';
+  loginMessage.textContent = '';
+
+}
+
+
+function showAdminMessage(
+  message,
+  type = 'info'
+) {
+
+  if (!adminMessage) return;
+
+  adminMessage.textContent = message;
+  adminMessage.className = '';
+
+  adminMessage.classList.add(type);
+
+  clearTimeout(
+    showAdminMessage.timeout
+  );
+
+  showAdminMessage.timeout =
+    setTimeout(
+      function() {
+
+        adminMessage.className = '';
+
+      },
+      6000
+    );
+
+}
+
+
+/* ============================================================
+   FORMAT
+============================================================ */
+
+function formatNumber(value) {
+
+  const number = Number(value);
+
+  if (!Number.isFinite(number)) {
+    return '0';
+  }
+
+  return new Intl.NumberFormat(
+    'fr-FR'
+  ).format(number);
+
+}
+
+
+/* ============================================================
+   BADGE PWA (icône app - commandes en attente)
+============================================================ */
+
+function updateAppBadge(count) {
+
+  if (!('setAppBadge' in navigator)) {
+    return;
+  }
+
+  if (count > 0) {
+
+    navigator
+      .setAppBadge(count)
+      .catch(() => {});
+
+  } else {
+
+    navigator
+      .clearAppBadge?.()
+      .catch(() => {});
+
+  }
+
+}
+
+
+function formatUsdt(value) {
+
+  const number = Number(value);
+
+  if (!Number.isFinite(number)) {
+    return '0';
+  }
+
+  return new Intl.NumberFormat(
+    'fr-FR',
+    {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 6
+    }
+  ).format(number);
+
+}
+
+
+function formatDate(value) {
+
+  if (!value) return '—';
+
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return '—';
+  }
+
+  return date.toLocaleString(
+    'fr-FR',
+    {
+      dateStyle: 'short',
+      timeStyle: 'short'
+    }
+  );
+
+}
+
+
+/* ============================================================
+   SECURITE HTML
+============================================================ */
+
+function escapeHtml(value) {
+
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return '';
+  }
+
+  return String(value)
+    .replaceAll('&','&amp;')
+    .replaceAll('<','&lt;')
+    .replaceAll('>','&gt;')
+    .replaceAll('"','&quot;')
+    .replaceAll("'",'&#039;');
+
+}
+
+
+/* ============================================================
+   STATUT
+============================================================ */
+
+function normalizeStatus(status) {
+
+  if (!status) return 'pending';
+
+  return String(status)
+    .trim()
+    .toLowerCase();
+
+}
+
+
+function statusLabel(status) {
+
+  const value =
+    normalizeStatus(status);
+
+  const labels = {
+    pending: 'En attente',
+    processing: 'En traitement',
+    completed: 'Terminée',
+    cancelled: 'Annulée',
+    disputed: 'Litige',
+    dispute: 'Litige'
+  };
+
+  return labels[value] || value || 'Inconnu';
+
+}
+
+
+function statusClass(status) {
+
+  const value =
+    normalizeStatus(status);
+
+  if (
+    value === 'disputed' ||
+    value === 'dispute'
+  ) {
+    return 'dispute';
+  }
+
+  return value;
+
+}
+
+
+function orderTypeLabel(type) {
+
+  const value =
+    String(type || '')
+      .trim()
+      .toLowerCase();
+
+  if (value === 'buy') return 'Achat';
+  if (value === 'sell') return 'Vente';
+
+  return type || '—';
+
+}
+
+
+function networkLabel(network) {
+
+  if (!network) return '—';
+
+  const value =
+    String(network)
+      .trim()
+      .toLowerCase();
+
+  if (value === 'trc20') {
+    return 'TRC20';
+  }
+
+  if (
+    value === 'bep20' ||
+    value === 'bp20'
+  ) {
+    return 'BEP20';
+  }
+
+  if (value === 'plasma') {
+    return 'Plasma (USDT0)';
+  }
+
+  if (value === 'uid') {
+    return 'ID Binance';
+  }
+
+  if (value === 'id') {
+    return 'UID OKX';
+  }
+
+  return escapeHtml(network);
+
+}
+
+
+/* ============================================================
+   AFFICHAGE
+============================================================ */
+
+function showLogin() {
+
+  loginScreen?.classList.remove('hidden');
+  adminApp?.classList.add('hidden');
+
+}
+
+
+function showAdmin() {
+
+  loginScreen?.classList.add('hidden');
+  adminApp?.classList.remove('hidden');
+
+}
+
+
+function resetAdminData() {
+
+  currentAdmin = null;
+  adminProfile = null;
+
+  allOrders = [];
+  allUsers = [];
+  allDisputes = [];
+
+  settings = null;
+
+}
+
+
+/* ============================================================
+   SESSION
+============================================================ */
+
+async function checkSession() {
+
+  if (isCheckingSession) return;
+
+  isCheckingSession = true;
+
+  try {
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+        .auth
+        .getSession();
+
+
+    if (error) {
+
+      console.error(
+        'Erreur session:',
+        error
+      );
+
+      resetAdminData();
+      showLogin();
+
+      showLoginMessage(
+        'Impossible de vérifier la session.'
+      );
+
+      return;
+
+    }
+
+
+    if (
+      !data ||
+      !data.session ||
+      !data.session.user
+    ) {
+
+      resetAdminData();
+      showLogin();
+
+      return;
+
+    }
+
+
+    currentAdmin =
+      data.session.user;
+
+    await verifyAdmin();
+
+  } finally {
+
+    isCheckingSession = false;
+
+  }
+
+}
+
+
+/* ============================================================
+   VERIFICATION ADMIN
+============================================================ */
+
+async function verifyAdmin() {
+
+  if (
+    !currentAdmin ||
+    !currentAdmin.id
+  ) {
+
+    showLogin();
+    return false;
+
+  }
+
+
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+      .from('profiles')
+      .select(
+        'id, full_name, phone, country, role'
+      )
+      .eq(
+        'id',
+        currentAdmin.id
+      )
+      .maybeSingle();
+
+
+  if (error) {
+
+    console.error(
+      'Erreur vérification admin:',
+      error
+    );
+
+    await supabaseClient
+      .auth
+      .signOut();
+
+    resetAdminData();
+    showLogin();
+
+    showLoginMessage(
+      'Impossible de vérifier les droits administrateur.'
+    );
+
+    return false;
+
+  }
+
+
+  if (
+    !data ||
+    String(data.role).toLowerCase() !== 'admin'
+  ) {
+
+    await supabaseClient
+      .auth
+      .signOut();
+
+    resetAdminData();
+    showLogin();
+
+    showLoginMessage(
+      'Accès refusé : ce compte n’est pas administrateur.'
+    );
+
+    return false;
+
+  }
+
+
+  adminProfile = data;
+
+  showAdmin();
+
+  subscribeToPush();
+
+  await loadEverything();
+
+  return true;
+
+}
+
+
+/* ============================================================
+   LOGIN
+============================================================ */
+
+if (adminLoginForm) {
+
+  adminLoginForm.addEventListener(
+    'submit',
+    async function(event) {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById(
+          'adminEmail'
+        )?.value.trim();
+
+      const password =
+        document.getElementById(
+          'adminPassword'
+        )?.value || '';
+
+
+      if (!email) {
+
+        showLoginMessage(
+          'Veuillez saisir votre adresse email.'
+        );
+
+        return;
+
+      }
+
+
+      if (!password) {
+
+        showLoginMessage(
+          'Veuillez saisir votre mot de passe.'
+        );
+
+        return;
+
+      }
+
+
+      showLoginMessage(
+        'Connexion en cours...',
+        'info'
+      );
+
+
+      const {
+        data,
+        error
+      } =
+        await supabaseClient
+          .auth
+          .signInWithPassword({
+            email,
+            password
+          });
+
+
+      if (error) {
+
+        console.error(
+          'Erreur connexion:',
+          error
+        );
+
+        showLoginMessage(
+          'Email ou mot de passe incorrect.'
+        );
+
+        return;
+
+      }
+
+
+      if (!data?.user) {
+
+        showLoginMessage(
+          'Connexion impossible.'
+        );
+
+        return;
+
+      }
+
+
+      currentAdmin = data.user;
+
+      showLoginMessage(
+        'Connexion réussie. Vérification des droits...',
+        'success'
+      );
+
+
+      await verifyAdmin();
+
+    }
+  );
+
+}
+
+
+/* ============================================================
+   LOGOUT
+============================================================ */
+
+if (logoutAdminBtn) {
+
+  logoutAdminBtn.addEventListener(
+    'click',
+    async function() {
+
+      const {
+        error
+      } =
+        await supabaseClient
+          .auth
+          .signOut();
+
+
+      if (error) {
+
+        console.error(
+          'Erreur déconnexion:',
+          error
+        );
+
+        showAdminMessage(
+          'Erreur lors de la déconnexion.',
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      resetAdminData();
+      showLogin();
+      hideLoginMessage();
+
+    }
+  );
+
+}
+
+
+/* ============================================================
+   NAVIGATION
+============================================================ */
+
+document
+  .querySelectorAll('.admin-nav-btn')
+  .forEach(
+    function(button) {
+
+      button.addEventListener(
+        'click',
+        function() {
+
+          switchAdminPage(
+            button.dataset.page
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+document
+  .querySelectorAll('[data-go-page]')
+  .forEach(
+    function(button) {
+
+      button.addEventListener(
+        'click',
+        function() {
+
+          switchAdminPage(
+            button.dataset.goPage
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+function switchAdminPage(pageId) {
+
+  if (!pageId) return;
+
+
+  document
+    .querySelectorAll('.admin-page')
+    .forEach(
+      function(page) {
+
+        page.classList.remove('active');
+
+      }
+    );
+
+
+  const target =
+    document.getElementById(pageId);
+
+
+  if (target) {
+    target.classList.add('active');
+  }
+
+
+  document
+    .querySelectorAll('.admin-nav-btn')
+    .forEach(
+      function(button) {
+
+        button.classList.toggle(
+          'active',
+          button.dataset.page === pageId
+        );
+
+      }
+    );
+
+
+  if (pageId === 'ordersAdminPage') {
+    loadOrders();
+  }
+
+  if (pageId === 'usersAdminPage') {
+    renderUsers();
+  }
+
+  if (pageId === 'disputesAdminPage') {
+    renderDisputes();
+  }
+
+}
+
+
+/* ============================================================
+   CHARGEMENT GLOBAL
+============================================================ */
+
+async function loadEverything() {
+
+  showAdminMessage(
+    'Chargement des données...',
+    'info'
+  );
+
+
+  const results =
+    await Promise.allSettled([
+
+      loadSettings(),
+      loadOrders(),
+      loadUsers(),
+      loadDisputes()
+
+    ]);
+
+
+  results.forEach(
+    function(result,index) {
+
+      if (result.status === 'rejected') {
+
+        console.error(
+          'Erreur chargement #' + index,
+          result.reason
+        );
+
+      }
+
+    }
+  );
+
+
+  updateDashboard();
+
+}
+
+
+/* ============================================================
+   CHARGEMENT APP_SETTINGS
+============================================================ */
+
+async function loadSettings() {
+
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+      .from('app_settings')
+      .select(
+        'id,country,buy_rate,sell_rate,min_order_cfa,max_order_cfa,trc20_fee_usdt,bp20_fee_usdt,plasma_fee_usdt,usdt_balance,fcfa_balance,orange_money_number,updated_at'
+      )
+      .eq(
+        'id',
+        1
+      )
+      .maybeSingle();
+
+
+  if (error) {
+
+    console.error(
+      'Erreur paramètres:',
+      error
+    );
+
+    settings = null;
+
+    updateSettingsDisplay(null);
+
+    showAdminMessage(
+      'Impossible de charger les paramètres commerciaux : ' +
+      error.message,
+      'error'
+    );
+
+    return;
+
+  }
+
+
+  if (!data) {
+
+    settings = null;
+
+    updateSettingsDisplay(null);
+
+    showAdminMessage(
+      'La configuration app_settings avec id = 1 est introuvable.',
+      'error'
+    );
+
+    return;
+
+  }
+
+
+  settings = data;
+
+  updateSettingsDisplay(data);
+
+}
+
+
+/* ============================================================
+   AFFICHAGE PARAMETRES
+============================================================ */
+
+function updateSettingsDisplay(data) {
+
+  const buyRate =
+    document.getElementById('buyRate');
+
+  const sellRate =
+    document.getElementById('sellRate');
+
+  const trc20Fee =
+    document.getElementById('trc20FeeInput');
+
+  const bp20Fee =
+    document.getElementById('bp20FeeInput');
+
+  const plasmaFee =
+    document.getElementById('plasmaFeeInput');
+
+  const minOrder =
+    document.getElementById('minOrderInput');
+
+  const maxOrder =
+    document.getElementById('maxOrderInput');
+
+  const usdtBalance =
+    document.getElementById('usdtBalanceInput');
+
+  const fcfaBalance =
+    document.getElementById('fcfaBalanceInput');
+
+
+  if (!data) {
+
+    if (buyRate) buyRate.value = '';
+    if (sellRate) sellRate.value = '';
+    if (trc20Fee) trc20Fee.value = '';
+    if (bp20Fee) bp20Fee.value = '';
+    if (plasmaFee) plasmaFee.value = '';
+    if (minOrder) minOrder.value = '';
+    if (maxOrder) maxOrder.value = '';
+    if (usdtBalance) usdtBalance.value = '';
+    if (fcfaBalance) fcfaBalance.value = '';
+
+  } else {
+
+    /*
+     * IMPORTANT :
+     * vrais noms des colonnes Supabase
+     */
+
+    if (buyRate) {
+      buyRate.value =
+        data.buy_rate ?? '';
+    }
+
+    if (sellRate) {
+      sellRate.value =
+        data.sell_rate ?? '';
+    }
+
+    if (trc20Fee) {
+      trc20Fee.value =
+        data.trc20_fee_usdt ?? '';
+    }
+
+    if (bp20Fee) {
+      bp20Fee.value =
+        data.bp20_fee_usdt ?? '';
+    }
+
+    if (plasmaFee) {
+      plasmaFee.value =
+        data.plasma_fee_usdt ?? '';
+    }
+
+    if (minOrder) {
+      minOrder.value =
+        data.min_order_cfa ?? '';
+    }
+
+    if (maxOrder) {
+      maxOrder.value =
+        data.max_order_cfa ?? '';
+    }
+
+    if (usdtBalance) {
+      usdtBalance.value =
+        data.usdt_balance ?? '';
+    }
+
+    if (fcfaBalance) {
+      fcfaBalance.value =
+        data.fcfa_balance ?? '';
+    }
+
+  }
+
+
+  const dashboardBuyRate =
+    document.getElementById(
+      'dashboardBuyRate'
+    );
+
+  const dashboardSellRate =
+    document.getElementById(
+      'dashboardSellRate'
+    );
+
+  const dashboardTrc20Fee =
+    document.getElementById(
+      'dashboardTrc20Fee'
+    );
+
+  const dashboardBp20Fee =
+    document.getElementById(
+      'dashboardBp20Fee'
+    );
+
+  const dashboardPlasmaFee =
+    document.getElementById(
+      'dashboardPlasmaFee'
+    );
+
+
+  if (dashboardBuyRate) {
+
+    dashboardBuyRate.textContent =
+      data
+        ? formatNumber(data.buy_rate)
+        : '—';
+
+  }
+
+
+  if (dashboardSellRate) {
+
+    dashboardSellRate.textContent =
+      data
+        ? formatNumber(data.sell_rate)
+        : '—';
+
+  }
+
+
+  if (dashboardTrc20Fee) {
+
+    dashboardTrc20Fee.textContent =
+      data
+        ? formatUsdt(data.trc20_fee_usdt)
+        : '—';
+
+  }
+
+
+  if (dashboardBp20Fee) {
+
+    dashboardBp20Fee.textContent =
+      data
+        ? formatUsdt(data.bp20_fee_usdt)
+        : '—';
+
+  }
+
+
+  if (dashboardPlasmaFee) {
+
+    dashboardPlasmaFee.textContent =
+      data
+        ? formatUsdt(data.plasma_fee_usdt)
+        : '—';
+
+  }
+
+}
+
+
+/* ============================================================
+   SAUVEGARDE PARAMETRES
+   CORRECTION PRINCIPALE
+============================================================ */
+
+const settingsForm =
+  document.getElementById(
+    'settingsForm'
+  );
+
+
+if (settingsForm) {
+
+  settingsForm.addEventListener(
+    'submit',
+    async function(event) {
+
+      event.preventDefault();
+
+
+      /* ------------------------------------------------------
+         Vérification configuration
+      ------------------------------------------------------ */
+
+      if (
+        !settings ||
+        settings.id === undefined ||
+        settings.id === null
+      ) {
+
+        showAdminMessage(
+          'La configuration app_settings (id = 1) est introuvable.',
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      /* ------------------------------------------------------
+         Lecture des champs
+      ------------------------------------------------------ */
+
+      const buyRate =
+        Number(
+          document.getElementById(
+            'buyRate'
+          )?.value
+        );
+
+
+      const sellRate =
+        Number(
+          document.getElementById(
+            'sellRate'
+          )?.value
+        );
+
+
+      const trc20Fee =
+        Number(
+          document.getElementById(
+            'trc20FeeInput'
+          )?.value
+        );
+
+
+      const bp20Fee =
+        Number(
+          document.getElementById(
+            'bp20FeeInput'
+          )?.value
+        );
+
+
+      const plasmaFee =
+        Number(
+          document.getElementById(
+            'plasmaFeeInput'
+          )?.value
+        );
+
+
+      const minOrder =
+        Number(
+          document.getElementById(
+            'minOrderInput'
+          )?.value
+        );
+
+
+      const maxOrder =
+        Number(
+          document.getElementById(
+            'maxOrderInput'
+          )?.value
+        );
+
+      const usdtBalance =
+        Number(
+          document.getElementById(
+            'usdtBalanceInput'
+          )?.value
+        );
+
+      const fcfaBalance =
+        Number(
+          document.getElementById(
+            'fcfaBalanceInput'
+          )?.value
+        );
+
+
+      /* ------------------------------------------------------
+         Validation
+      ------------------------------------------------------ */
+
+      const values = [
+        buyRate,
+        sellRate,
+        trc20Fee,
+        bp20Fee,
+        plasmaFee,
+        minOrder,
+        maxOrder,
+        usdtBalance,
+        fcfaBalance
+      ];
+
+
+      if (
+        values.some(
+          value =>
+            !Number.isFinite(value)
+        )
+      ) {
+
+        showAdminMessage(
+          'Veuillez remplir correctement tous les paramètres.',
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      if (
+        buyRate <= 0 ||
+        sellRate <= 0
+      ) {
+
+        showAdminMessage(
+          'Les taux d’achat et de vente doivent être supérieurs à zéro.',
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      if (
+        trc20Fee < 0 ||
+        bp20Fee < 0 ||
+        plasmaFee < 0
+      ) {
+
+        showAdminMessage(
+          'Les frais réseau ne peuvent pas être négatifs.',
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      if (
+        minOrder < 0 ||
+        maxOrder < 0
+      ) {
+
+        showAdminMessage(
+          'Les limites de commande ne peuvent pas être négatives.',
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      if (
+        minOrder > maxOrder
+      ) {
+
+        showAdminMessage(
+          'Le montant minimum ne peut pas être supérieur au maximum.',
+          'error'
+        );
+
+        return;
+
+      }
+
+
+      /* ------------------------------------------------------
+         BOUTON
+      ------------------------------------------------------ */
+
+      const saveButton =
+        document.getElementById(
+          'saveSettingsBtn'
+        );
+
+
+      if (saveButton) {
+
+        saveButton.disabled = true;
+        saveButton.textContent =
+          '⏳ Enregistrement...';
+
+      }
+
+
+      showAdminMessage(
+        'Enregistrement des paramètres...',
+        'info'
+      );
+
+
+      try {
+
+        /* ----------------------------------------------------
+           UPDATE AVEC LES VRAIS NOMS DE COLONNES
+        ---------------------------------------------------- */
+
+        const updateValues = {
+
+          buy_rate:
+            buyRate,
+
+          sell_rate:
+            sellRate,
+
+          min_order_cfa:
+            minOrder,
+
+          max_order_cfa:
+            maxOrder,
+
+          trc20_fee_usdt:
+            trc20Fee,
+
+          bp20_fee_usdt:
+            bp20Fee,
+
+          plasma_fee_usdt:
+            plasmaFee,
+
+          usdt_balance:
+            usdtBalance,
+
+          fcfa_balance:
+            fcfaBalance,
+
+          updated_at:
+            new Date().toISOString()
+
+        };
+
+
+        console.log(
+          'Valeurs envoyées à app_settings:',
+          updateValues
+        );
+
+
+        const {
+          error
+        } =
+          await supabaseClient
+            .from('app_settings')
+            .update(
+              updateValues
+            )
+            .eq(
+              'id',
+              settings.id
+            );
+
+
+        /* ----------------------------------------------------
+           ERREUR SUPABASE
+        ---------------------------------------------------- */
+
+        if (error) {
+
+          console.error(
+            'ERREUR SUPABASE SAUVEGARDE:',
+            error
+          );
+
+          showAdminMessage(
+            '❌ Erreur Supabase : ' +
+            (
+              error.message ||
+              'erreur inconnue'
+            ),
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        /* ----------------------------------------------------
+           RELECTURE DIRECTE DE LA BASE
+        ---------------------------------------------------- */
+
+        const {
+          data: verifyData,
+          error: verifyError
+        } =
+          await supabaseClient
+            .from('app_settings')
+            .select(
+              'id,buy_rate,sell_rate,min_order_cfa,max_order_cfa,trc20_fee_usdt,bp20_fee_usdt,plasma_fee_usdt,usdt_balance,fcfa_balance,updated_at'
+            )
+            .eq(
+              'id',
+              settings.id
+            )
+            .maybeSingle();
+
+
+        if (verifyError) {
+
+          console.error(
+            'Erreur vérification:',
+            verifyError
+          );
+
+          showAdminMessage(
+            'Les données ont été envoyées, mais leur vérification a échoué : ' +
+            verifyError.message,
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        if (!verifyData) {
+
+          showAdminMessage(
+            'La sauvegarde a été envoyée mais aucune configuration n’a pu être relue.',
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        /* ----------------------------------------------------
+           VERIFICATION VALEURS
+        ---------------------------------------------------- */
+
+        const savedBuy =
+          Number(
+            verifyData.buy_rate
+          );
+
+        const savedSell =
+          Number(
+            verifyData.sell_rate
+          );
+
+        const savedMin =
+          Number(
+            verifyData.min_order_cfa
+          );
+
+        const savedMax =
+          Number(
+            verifyData.max_order_cfa
+          );
+
+        const savedTrc =
+          Number(
+            verifyData.trc20_fee_usdt
+          );
+
+        const savedBp =
+          Number(
+            verifyData.bp20_fee_usdt
+          );
+
+        const savedPlasma =
+          Number(
+            verifyData.plasma_fee_usdt
+          );
+
+        const savedUsdtBalance =
+          Number(
+            verifyData.usdt_balance
+          );
+
+        const savedFcfaBalance =
+          Number(
+            verifyData.fcfa_balance
+          );
+
+
+        const success =
+          savedBuy === buyRate &&
+          savedSell === sellRate &&
+          savedMin === minOrder &&
+          savedMax === maxOrder &&
+          savedTrc === trc20Fee &&
+          savedBp === bp20Fee &&
+          savedPlasma === plasmaFee &&
+          savedUsdtBalance === usdtBalance &&
+          savedFcfaBalance === fcfaBalance;
+
+
+        if (!success) {
+
+          console.error(
+            'Valeurs demandées:',
+            {
+              buyRate,
+              sellRate,
+              minOrder,
+              maxOrder,
+              trc20Fee,
+              bp20Fee,
+              plasmaFee,
+              usdtBalance,
+              fcfaBalance
+            }
+          );
+
+          console.error(
+            'Valeurs relues:',
+            verifyData
+          );
+
+
+          showAdminMessage(
+            '❌ La base a répondu, mais les valeurs enregistrées ne correspondent pas aux valeurs demandées.',
+            'error'
+          );
+
+          return;
+
+        }
+
+
+        /* ----------------------------------------------------
+           ACTUALISATION LOCALE
+        ---------------------------------------------------- */
+
+        settings = {
+          ...settings,
+          ...verifyData
+        };
+
+
+        updateSettingsDisplay(
+          settings
+        );
+
+
+        updateDashboard();
+
+
+        showAdminMessage(
+          '✅ Les paramètres ont été enregistrés avec succès.',
+          'success'
+        );
+
+
+        console.log(
+          'SAUVEGARDE PARAMETRES REUSSIE:',
+          settings
+        );
+
+      } catch (error) {
+
+        console.error(
+          'Erreur inattendue:',
+          error
+        );
+
+        showAdminMessage(
+          '❌ Une erreur inattendue est survenue : ' +
+          (
+            error.message ||
+            error
+          ),
+          'error'
+        );
+
+      } finally {
+
+        if (saveButton) {
+
+          saveButton.disabled = false;
+
+          saveButton.textContent =
+            '💾 Enregistrer les paramètres';
+
+        }
+
+      }
+
+    }
+  );
+
+}
+
+
+/* ============================================================
+   COMMANDES
+============================================================ */
+
+async function loadOrders() {
+
+  const container =
+    document.getElementById('ordersList');
+
+  if (container) {
+    container.innerHTML =
+      '<div class="empty">Chargement des commandes...</div>';
+  }
+
+  try {
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+        .from('orders')
+        .select('*')
+        .order(
+          'created_at',
+          {
+            ascending: false
+          }
+        );
+
+    if (error) {
+      throw error;
+    }
+
+    allOrders =
+      Array.isArray(data)
+        ? data
+        : [];
+
+    renderOrders();
+    renderRecentOrders();
+
+  } catch (error) {
+
+    console.error(
+      'Erreur commandes:',
+      error
+    );
+
+    allOrders = [];
+
+    if (container) {
+      container.innerHTML =
+        '<div class="empty">Impossible de charger les commandes. Vérifiez les autorisations Supabase puis réessayez.</div>';
+    }
+
+    renderRecentOrders();
+
+  }
+
+}
+
+function renderOrders() {
+
+  const container =
+    document.getElementById('ordersList');
+
+  if (!container) return;
+
+  const statusFilter =
+    document.getElementById('orderStatusFilter')?.value || '';
+
+  const typeFilter =
+    document.getElementById('orderTypeFilter')?.value || '';
+
+  let orders =
+    [...allOrders];
+
+  if (statusFilter) {
+    orders = orders.filter(
+      order =>
+        normalizeStatus(order.status) === statusFilter
+    );
+  }
+
+  if (typeFilter) {
+    orders = orders.filter(
+      order =>
+        String(
+          order.side || order.order_type || ''
+        ).toLowerCase() === typeFilter
+    );
+  }
+
+  if (!orders.length) {
+    container.innerHTML =
+      '<div class="empty">Aucune commande trouvée.</div>';
+    return;
+  }
+
+  container.innerHTML =
+    orders.map(
+      function(order) {
+
+        const status =
+          normalizeStatus(order.status);
+
+        const side =
+          String(
+            order.side || order.order_type || ''
+          ).toLowerCase();
+
+        const type =
+          side === 'sell'
+            ? 'Vente USDT'
+            : 'Achat USDT';
+
+        const amountCfa =
+          Number(
+            order.amount_cfa ??
+            order.amount ??
+            0
+          );
+
+        const receiveCfa =
+          Number(
+            order.receive_cfa ??
+            amountCfa
+          );
+
+        const amountUsdt =
+          Number(
+            order.amount_usdt ??
+            order.usdt_amount ??
+            0
+          );
+
+        const storedFee =
+          order.fee_usdt;
+
+        const storedNet =
+          order.net_usdt;
+
+        const hasStoredFee =
+          storedFee !== null &&
+          storedFee !== undefined &&
+          storedFee !== '' &&
+          Number.isFinite(Number(storedFee));
+
+        const hasStoredNet =
+          storedNet !== null &&
+          storedNet !== undefined &&
+          storedNet !== '' &&
+          Number.isFinite(Number(storedNet));
+
+        // Frais enregistrés à la création de la commande.
+        // Repli sur les paramètres actuels uniquement pour les anciennes
+        // commandes qui n'ont pas de frais enregistré.
+        const networkFee =
+          hasStoredFee
+            ? Number(storedFee)
+            : Number(
+                networkLabel(order.network) === 'TRC20'
+                  ? (settings?.trc20_fee_usdt ?? 0)
+                  : networkLabel(order.network) === 'BEP20'
+                    ? (settings?.bp20_fee_usdt ?? 0)
+                    : networkLabel(order.network) === 'Plasma (USDT0)'
+                      ? (settings?.plasma_fee_usdt ?? 0)
+                      : 0
+              );
+
+        const netUsdt =
+          hasStoredNet
+            ? Number(storedNet)
+            : Math.max(amountUsdt - networkFee, 0);
+
+        return `
+          <div class="order-detail" style="margin-bottom:12px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;">
+              <strong>${escapeHtml(type)}</strong>
+              <span class="status ${escapeHtml(statusClass(status))}">
+                ${escapeHtml(statusLabel(status))}
+              </span>
+            </div>
+
+            <div style="margin-top:10px;">
+              <div><strong>${side === 'sell' ? 'Montant net à payer :' : 'Montant :'}</strong> ${formatNumber(side === 'sell' ? receiveCfa : amountCfa)} FCFA</div>
+              ${
+                side === 'sell'
+                  ? `<div><strong>Montant brut (avant frais) :</strong> ${formatNumber(amountCfa)} FCFA</div>`
+                  : ''
+              }
+              <div><strong>USDT :</strong> ${formatUsdt(amountUsdt)} USDT</div>
+              ${
+                side === 'sell'
+                  ? ''
+                  : `
+                    <div><strong>Frais :</strong> ${formatUsdt(networkFee)} USDT</div>
+                    <div><strong>USDT net à créditer :</strong> ${formatUsdt(netUsdt)} USDT</div>
+                  `
+              }
+              <div><strong>Réseau :</strong> ${escapeHtml(networkLabel(order.network))}</div>
+              ${
+                side === 'sell'
+                  ? ''
+                  : `
+                    <div><strong>Adresse de réception :</strong> ${
+                      order.wallet_address
+                        ? escapeHtml(order.wallet_address)
+                        : '<span style="color:#c0392b;">Non renseignée</span>'
+                    }</div>
+                  `
+              }
+              <div><strong>Date :</strong> ${escapeHtml(formatDate(order.created_at))}</div>
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;">
+              ${
+                order.payment_proof_url
+                  ? `
+                    <button
+                      type="button"
+                      class="btn btn-secondary btn-small"
+                      data-proof-path="${escapeHtml(order.payment_proof_url)}"
+                    >
+                      📎 Voir la preuve
+                    </button>
+                  `
+                  : `
+                    <span style="font-size:11px;color:#7b8493;">
+                      Aucune preuve jointe
+                    </span>
+                  `
+              }
+
+              <button
+                type="button"
+                class="btn btn-primary btn-small"
+                data-order-id="${escapeHtml(order.id)}"
+              >
+                Modifier le statut
+              </button>
+            </div>
+          </div>
+        `;
+      }
+    ).join('');
+
+  container
+    .querySelectorAll('[data-order-id]')
+    .forEach(
+      function(button) {
+        button.addEventListener(
+          'click',
+          function() {
+            openOrderStatus(
+              button.dataset.orderId
+            );
+          }
+        );
+      }
+    );
+
+  container
+    .querySelectorAll('[data-proof-path]')
+    .forEach(
+      function(button) {
+        button.addEventListener(
+          'click',
+          async function() {
+            await openPaymentProof(
+              button.dataset.proofPath
+            );
+          }
+        );
+      }
+    );
+
+}
+
+async function openPaymentProof(proofPath) {
+
+  if (!proofPath) {
+    showAdminMessage(
+      'Aucune preuve de paiement n’est disponible pour cette commande.',
+      'info'
+    );
+    return;
+  }
+
+  const originalButton =
+    document.activeElement;
+
+  if (
+    originalButton &&
+    originalButton.tagName === 'BUTTON'
+  ) {
+    originalButton.disabled = true;
+  }
+
+  showAdminMessage(
+    'Ouverture de la preuve de paiement...',
+    'info'
+  );
+
+  try {
+
+    /*
+     * Le bucket "payment-proofs" est privé.
+     * Le client enregistre donc seulement le chemin du fichier.
+     * L'administration doit créer une URL signée temporaire.
+     */
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+        .storage
+        .from('payment-proofs')
+        .createSignedUrl(
+          proofPath,
+          60 * 10
+        );
+
+    if (error) {
+      throw error;
+    }
+
+    if (!data?.signedUrl) {
+      throw new Error(
+        'Impossible de générer le lien sécurisé de la preuve.'
+      );
+    }
+
+    const proofWindow =
+      window.open(
+        data.signedUrl,
+        '_blank',
+        'noopener,noreferrer'
+      );
+
+    if (!proofWindow) {
+      showAdminMessage(
+        'La preuve est prête, mais le navigateur a bloqué son ouverture. Autorisez les fenêtres contextuelles puis réessayez.',
+        'error'
+      );
+      return;
+    }
+
+    showAdminMessage(
+      'Preuve de paiement ouverte.',
+      'success'
+    );
+
+  } catch (error) {
+
+    console.error(
+      'Erreur ouverture preuve de paiement:',
+      error
+    );
+
+    showAdminMessage(
+      'Impossible d’ouvrir la preuve : ' +
+      (
+        error?.message ||
+        'erreur inconnue'
+      ),
+      'error'
+    );
+
+  } finally {
+
+    if (
+      originalButton &&
+      originalButton.tagName === 'BUTTON'
+    ) {
+      originalButton.disabled = false;
+    }
+
+  }
+
+}
+
+
+async function openOrderStatus(orderId) {
+
+  const order =
+    allOrders.find(
+      item =>
+        String(item.id) ===
+        String(orderId)
+    );
+
+
+  if (!order) {
+
+    showAdminMessage(
+      'Commande introuvable.',
+      'error'
+    );
+
+    return;
+
+  }
+
+
+  const currentStatus =
+    normalizeStatus(
+      order.status
+    );
+
+
+  const newStatus =
+    window.prompt(
+      `Commande ${order.id}
+
+Statut actuel : ${statusLabel(currentStatus)}
+
+Entrez :
+pending
+processing
+completed
+cancelled`,
+      currentStatus
+    );
+
+
+  if (newStatus === null) {
+    return;
+  }
+
+
+  const normalized =
+    newStatus
+      .trim()
+      .toLowerCase();
+
+
+  const allowed = [
+    'pending',
+    'processing',
+    'completed',
+    'cancelled'
+  ];
+
+
+  if (!allowed.includes(normalized)) {
+
+    showAdminMessage(
+      'Statut invalide.',
+      'error'
+    );
+
+    return;
+
+  }
+
+
+  if (normalized === currentStatus) {
+
+    showAdminMessage(
+      'Le statut est déjà identique.',
+      'info'
+    );
+
+    return;
+
+  }
+
+
+  showAdminMessage(
+    'Mise à jour de la commande...',
+    'info'
+  );
+
+
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+      .from('orders')
+      .update({
+        status: normalized,
+        updated_at:
+          new Date().toISOString()
+      })
+      .eq(
+        'id',
+        order.id
+      )
+      .select()
+      .maybeSingle();
+
+
+  if (error) {
+
+    console.error(
+      'Erreur modification commande:',
+      error
+    );
+
+    showAdminMessage(
+      'Impossible de modifier le statut : ' +
+      error.message,
+      'error'
+    );
+
+    return;
+
+  }
+
+
+  if (data) {
+
+    const index =
+      allOrders.findIndex(
+        item =>
+          String(item.id) ===
+          String(order.id)
+      );
+
+
+    if (index !== -1) {
+      allOrders[index] = data;
+    }
+
+  }
+
+
+  renderOrders();
+  renderRecentOrders();
+  updateDashboard();
+
+
+  showAdminMessage(
+    'Statut de la commande mis à jour.',
+    'success'
+  );
+
+}
+
+
+function renderRecentOrders() {
+
+  const container =
+    document.getElementById(
+      'recentOrders'
+    );
+
+
+  if (!container) return;
+
+
+  const recent =
+    allOrders.slice(0,5);
+
+
+  if (!recent.length) {
+
+    container.innerHTML = `
+      <div class="empty">
+        Aucune commande.
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  container.innerHTML =
+    recent.map(
+      function(order) {
+
+        const status =
+          normalizeStatus(
+            order.status
+          );
+
+
+        return `
+          <div
+            class="order-detail"
+            style="margin-bottom:10px;"
+          >
+
+            <strong>
+              ${escapeHtml(order.id)}
+            </strong>
+
+            —
+            ${escapeHtml(
+              orderTypeLabel(
+                order.order_type
+              )
+            )}
+
+            —
+            ${formatNumber(
+              String(order.order_type || '').trim().toLowerCase() === 'sell'
+                ? (order.receive_cfa ?? order.amount_cfa)
+                : order.amount_cfa
+            )}
+            FCFA
+
+            <br>
+
+            ${
+              order.amount_usdt !== null &&
+              order.amount_usdt !== undefined
+                ? `
+                  ${formatUsdt(
+                    order.amount_usdt
+                  )}
+                  USDT
+                  <br>
+                `
+                : ''
+            }
+
+            <span
+              class="status ${escapeHtml(
+                statusClass(status)
+              )}"
+            >
+              ${escapeHtml(
+                statusLabel(status)
+              )}
+            </span>
+
+          </div>
+        `;
+
+      }
+    ).join('');
+
+}
+
+
+/* ============================================================
+   FILTRES COMMANDES
+============================================================ */
+
+document
+  .getElementById('orderStatusFilter')
+  ?.addEventListener(
+    'change',
+    renderOrders
+  );
+
+
+document
+  .getElementById('orderTypeFilter')
+  ?.addEventListener(
+    'change',
+    renderOrders
+  );
+
+
+/* ============================================================
+   ACTUALISER COMMANDES
+============================================================ */
+
+document
+  .getElementById('refreshOrdersBtn')
+  ?.addEventListener(
+    'click',
+    async function() {
+
+      const button = this;
+
+      button.disabled = true;
+
+      try {
+
+        await loadOrders();
+        updateDashboard();
+
+        showAdminMessage(
+          'Commandes actualisées.',
+          'success'
+        );
+
+      } finally {
+
+        button.disabled = false;
+
+      }
+
+    }
+  );
+
+
+/* ============================================================
+   UTILISATEURS
+============================================================ */
+
+async function loadUsers() {
+
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+      .from('profiles')
+      .select(
+        'id, full_name, phone, email, country, role, created_at'
+      )
+      .order(
+        'created_at',
+        {
+          ascending: false
+        }
+      );
+
+
+  if (error) {
+
+    console.error(
+      'Erreur utilisateurs:',
+      error
+    );
+
+    allUsers = [];
+
+    renderUsers();
+
+    return;
+
+  }
+
+
+  allUsers =
+    Array.isArray(data)
+      ? data
+      : [];
+
+
+  renderUsers();
+
+}
+
+
+function renderUsers() {
+
+  const tbody =
+    document.getElementById(
+      'usersTableBody'
+    );
+
+
+  if (!tbody) return;
+
+
+  if (!allUsers.length) {
+
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="5">
+          <div class="empty">
+            Aucun utilisateur trouvé.
+          </div>
+        </td>
+      </tr>
+    `;
+
+    return;
+
+  }
+
+
+  tbody.innerHTML =
+    allUsers.map(
+      function(user) {
+
+        return `
+          <tr>
+
+            <td>
+              <strong>
+                ${escapeHtml(
+                  user.full_name || '—'
+                )}
+              </strong>
+            </td>
+
+            <td>
+              ${escapeHtml(
+                user.phone || '—'
+              )}
+            </td>
+
+            <td>
+              ${escapeHtml(
+                user.email || '—'
+              )}
+            </td>
+
+            <td>
+              ${escapeHtml(
+                user.country ||
+                'Burkina Faso'
+              )}
+            </td>
+
+            <td>
+              ${formatDate(
+                user.created_at
+              )}
+            </td>
+
+          </tr>
+        `;
+
+      }
+    ).join('');
+
+}
+
+
+document
+  .getElementById('refreshUsersBtn')
+  ?.addEventListener(
+    'click',
+    async function() {
+
+      const button = this;
+
+      button.disabled = true;
+
+      try {
+
+        await loadUsers();
+        updateDashboard();
+
+        showAdminMessage(
+          'Utilisateurs actualisés.',
+          'success'
+        );
+
+      } finally {
+
+        button.disabled = false;
+
+      }
+
+    }
+  );
+
+
+/* ============================================================
+   LITIGES
+============================================================ */
+
+async function loadDisputes() {
+
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+      .from('disputes')
+      .select('*')
+      .order(
+        'created_at',
+        {
+          ascending: false
+        }
+      );
+
+
+  if (error) {
+
+    console.error(
+      'Erreur litiges:',
+      error
+    );
+
+    allDisputes = [];
+
+    renderDisputes();
+
+    return;
+
+  }
+
+
+  allDisputes =
+    Array.isArray(data)
+      ? data
+      : [];
+
+
+  renderDisputes();
+
+}
+
+
+function renderDisputes() {
+
+  const container =
+    document.getElementById(
+      'disputesList'
+    );
+
+
+  if (!container) return;
+
+
+  if (!allDisputes.length) {
+
+    container.innerHTML = `
+      <div class="empty">
+        Aucun litige.
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  container.innerHTML =
+    allDisputes.map(
+      function(dispute) {
+
+        const closed =
+          String(
+            dispute.status || ''
+          ).toLowerCase() === 'closed';
+
+
+        return `
+          <div
+            class="order-detail"
+            style="margin-bottom:12px;"
+          >
+
+            <strong>
+              ${escapeHtml(
+                dispute.subject ||
+                'Litige'
+              )}
+            </strong>
+
+            <br>
+
+            Commande :
+            ${escapeHtml(
+              dispute.order_id || '—'
+            )}
+
+            <br>
+
+            Client :
+            ${escapeHtml(
+              dispute.user_id || '—'
+            )}
+
+            <br><br>
+
+            ${escapeHtml(
+              dispute.message ||
+              'Aucun message.'
+            )}
+
+            <br><br>
+
+            <span
+              class="status ${
+                closed
+                  ? 'completed'
+                  : 'dispute'
+              }"
+            >
+              ${
+                closed
+                  ? 'Fermé'
+                  : 'Ouvert'
+              }
+            </span>
+
+            ${
+              dispute.created_at
+                ? `
+                  <br><br>
+                  <small>
+                    ${formatDate(
+                      dispute.created_at
+                    )}
+                  </small>
+                `
+                : ''
+            }
+
+          </div>
+        `;
+
+      }
+    ).join('');
+
+}
+
+
+document
+  .getElementById('refreshDisputesBtn')
+  ?.addEventListener(
+    'click',
+    async function() {
+
+      const button = this;
+
+      button.disabled = true;
+
+      try {
+
+        await loadDisputes();
+
+        showAdminMessage(
+          'Litiges actualisés.',
+          'success'
+        );
+
+      } finally {
+
+        button.disabled = false;
+
+      }
+
+    }
+  );
+
+
+/* ============================================================
+   DASHBOARD
+============================================================ */
+
+function updateDashboard() {
+
+  const total =
+    allOrders.length;
+
+
+  const pending =
+    allOrders.filter(
+      order =>
+        normalizeStatus(
+          order.status
+        ) === 'pending'
+    ).length;
+
+
+  updateAppBadge(pending);
+
+
+  const processing =
+    allOrders.filter(
+      order =>
+        normalizeStatus(
+          order.status
+        ) === 'processing'
+    ).length;
+
+
+  const statOrders =
+    document.getElementById(
+      'statOrders'
+    );
+
+  const statPending =
+    document.getElementById(
+      'statPending'
+    );
+
+  const statProcessing =
+    document.getElementById(
+      'statProcessing'
+    );
+
+  const statUsers =
+    document.getElementById(
+      'statUsers'
+    );
+
+
+  if (statOrders) {
+    statOrders.textContent =
+      formatNumber(total);
+  }
+
+  if (statPending) {
+    statPending.textContent =
+      formatNumber(pending);
+  }
+
+  if (statProcessing) {
+    statProcessing.textContent =
+      formatNumber(processing);
+  }
+
+  if (statUsers) {
+    statUsers.textContent =
+      formatNumber(
+        allUsers.length
+      );
+  }
+
+
+  renderRecentOrders();
+
+}
+
+
+/* ============================================================
+   AUTH STATE
+============================================================ */
+
+supabaseClient
+  .auth
+  .onAuthStateChange(
+    function(event, session) {
+
+      if (event === 'SIGNED_OUT') {
+
+        resetAdminData();
+        showLogin();
+
+        return;
+
+      }
+
+
+      if (
+        event === 'SIGNED_IN' &&
+        session?.user
+      ) {
+
+        setTimeout(
+          async function() {
+
+            currentAdmin =
+              session.user;
+
+            await verifyAdmin();
+
+          },
+          0
+        );
+
+      }
+
+    }
+  );
+
+
+/* ============================================================
+   DEMARRAGE
+============================================================ */
+
+document.addEventListener(
+  'DOMContentLoaded',
+  function() {
+
+    checkSession();
+
+  }
+);
+
+
+/* ============================================================
+   ERREURS
+============================================================ */
+
+window.addEventListener(
+  'unhandledrejection',
+  function(event) {
+
+    console.error(
+      'Erreur JavaScript non gérée:',
+      event.reason
+    );
+
+  }
+);
+
+
+/* ============================================================
+   PWA - INSTALLATION
+============================================================ */
+
+let deferredInstallPrompt = null;
+
+
+function isIosDevice() {
+
+  return /iphone|ipad|ipod/i.test(
+    navigator.userAgent
+  );
+
+}
+
+
+function isStandaloneApp() {
+
+  return (
+    window.matchMedia(
+      '(display-mode: standalone)'
+    ).matches ||
+    window.navigator.standalone === true
+  );
+
+}
+
+
+window.addEventListener(
+  'beforeinstallprompt',
+  function(event) {
+
+    event.preventDefault();
+
+    deferredInstallPrompt = event;
+
+    if (
+      document.getElementById('installAdminBtn') &&
+      !isStandaloneApp()
+    ) {
+
+      document.getElementById('installAdminBtn').style.display =
+        'inline-block';
+
+    }
+
+  }
+);
+
+
+window.addEventListener(
+  'appinstalled',
+  function() {
+
+    if (document.getElementById('installAdminBtn')) {
+
+      document.getElementById('installAdminBtn').style.display =
+        'none';
+
+    }
+
+    deferredInstallPrompt = null;
+
+  }
+);
+
+
+function setupInstallButton() {
+
+  if (
+    isIosDevice() &&
+    !isStandaloneApp() &&
+    document.getElementById('installAdminBtn')
+  ) {
+
+    document.getElementById('installAdminBtn').style.display =
+      'inline-block';
+
+  }
+
+
+  document.getElementById('installAdminBtn')?.addEventListener(
+    'click',
+    async function() {
+
+      if (deferredInstallPrompt) {
+
+        deferredInstallPrompt.prompt();
+
+        await deferredInstallPrompt.userChoice;
+
+        deferredInstallPrompt = null;
+
+        if (document.getElementById('installAdminBtn')) {
+
+          document.getElementById('installAdminBtn').style.display =
+            'none';
+
+        }
+
+        return;
+
+      }
+
+
+      if (isIosDevice()) {
+
+        alert(
+          "Pour installer l'application sur iPhone :\n\n" +
+          "1. Ouvre ce site dans Safari (pas Chrome)\n" +
+          "2. Appuie sur le bouton Partager\n" +
+          "3. Choisis \"Sur l'écran d'accueil\"\n" +
+          "4. Confirme \"Ajouter\""
+        );
+
+        return;
+
+      }
+
+
+      alert(
+        "Pour installer l'application, ouvre le menu de ton navigateur " +
+        "(les 3 points en haut à droite) puis choisis " +
+        "\"Installer l'application\" ou \"Ajouter à l'écran d'accueil\"."
+      );
+
+    }
+  );
+
+}
+
+
+setupInstallButton();
+
+
+/* ============================================================
+   PWA - ENREGISTREMENT DU SERVICE WORKER
+============================================================ */
+
+if ('serviceWorker' in navigator) {
+
+  window.addEventListener(
+    'load',
+    function() {
+
+      navigator.serviceWorker
+        .register('sw.js', { scope: './' })
+        .catch(function(error) {
+
+          console.error(
+            'Erreur service worker :',
+            error
+          );
+
+        });
+
+    }
+  );
+
+}
+
+
+/* ============================================================
+   PUSH - ABONNEMENT
+============================================================ */
+
+const VAPID_PUBLIC_KEY =
+  'BG_8IQum_X1gchhu5ewLXFYNBTRDHvwuqBnTI6eRv97wNOsfm-D4CZOsgIbTlje1j-KRHcpW4hyg8A0D-k22v4I';
+
+
+function urlBase64ToUint8Array(base64String) {
+
+  const padding =
+    '='.repeat(
+      (4 - base64String.length % 4) % 4
+    );
+
+  const base64 =
+    (base64String + padding)
+      .replace(/-/g, '+')
+      .replace(/_/g, '/');
+
+  const rawData = atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+
+  return outputArray;
+
+}
+
+
+async function subscribeToPush() {
+
+  if (
+    !('serviceWorker' in navigator) ||
+    !('PushManager' in window)
+  ) {
+
+    console.warn(
+      'Push non supporté sur ce navigateur.'
+    );
+
+    return;
+
+  }
+
+
+  try {
+
+    const permission =
+      await Notification.requestPermission();
+
+    if (permission !== 'granted') {
+
+      console.warn(
+        'Permission de notification refusée.'
+      );
+
+      return;
+
+    }
+
+
+    const registration =
+      await navigator.serviceWorker.ready;
+
+    let subscription =
+      await registration.pushManager.getSubscription();
+
+    if (!subscription) {
+
+      subscription =
+        await registration.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey:
+            urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
+        });
+
+    }
+
+
+    const subJson = subscription.toJSON();
+
+    await supabaseClient
+      .from('push_subscriptions')
+      .upsert(
+        {
+          endpoint: subJson.endpoint,
+          p256dh: subJson.keys.p256dh,
+          auth: subJson.keys.auth
+        },
+        { onConflict: 'endpoint' }
+      );
+
+  } catch (error) {
+
+    console.error(
+      'Erreur abonnement push :',
+      error
+    );
+
+  }
+
+}
+
 </script>
 
 </body>
