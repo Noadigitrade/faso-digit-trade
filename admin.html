@@ -1063,6 +1063,14 @@
             </strong>
           </div>
 
+          <div class="setting-box">
+            <div class="setting-title">PLASMA</div>
+            <strong>
+              <span id="dashboardPlasmaFee">—</span>
+              USDT
+            </strong>
+          </div>
+
         </div>
 
       </div>
@@ -1305,6 +1313,31 @@
               <input
                 type="number"
                 id="bp20FeeInput"
+                min="0"
+                step="0.01"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="setting-title">
+              ⛓️ Frais USDT Plasma (USDT0)
+            </div>
+
+            <div class="field">
+
+              <label for="plasmaFeeInput">
+                Frais en USDT
+              </label>
+
+              <input
+                type="number"
+                id="plasmaFeeInput"
                 min="0"
                 step="0.01"
                 required
@@ -2414,7 +2447,7 @@ async function loadSettings() {
     await supabaseClient
       .from('app_settings')
       .select(
-        'id,country,buy_rate,sell_rate,min_order_cfa,max_order_cfa,trc20_fee_usdt,bp20_fee_usdt,usdt_balance,fcfa_balance,orange_money_number,updated_at'
+        'id,country,buy_rate,sell_rate,min_order_cfa,max_order_cfa,trc20_fee_usdt,bp20_fee_usdt,plasma_fee_usdt,usdt_balance,fcfa_balance,orange_money_number,updated_at'
       )
       .eq(
         'id',
@@ -2486,6 +2519,9 @@ function updateSettingsDisplay(data) {
   const bp20Fee =
     document.getElementById('bp20FeeInput');
 
+  const plasmaFee =
+    document.getElementById('plasmaFeeInput');
+
   const minOrder =
     document.getElementById('minOrderInput');
 
@@ -2505,6 +2541,7 @@ function updateSettingsDisplay(data) {
     if (sellRate) sellRate.value = '';
     if (trc20Fee) trc20Fee.value = '';
     if (bp20Fee) bp20Fee.value = '';
+    if (plasmaFee) plasmaFee.value = '';
     if (minOrder) minOrder.value = '';
     if (maxOrder) maxOrder.value = '';
     if (usdtBalance) usdtBalance.value = '';
@@ -2535,6 +2572,11 @@ function updateSettingsDisplay(data) {
     if (bp20Fee) {
       bp20Fee.value =
         data.bp20_fee_usdt ?? '';
+    }
+
+    if (plasmaFee) {
+      plasmaFee.value =
+        data.plasma_fee_usdt ?? '';
     }
 
     if (minOrder) {
@@ -2580,6 +2622,11 @@ function updateSettingsDisplay(data) {
       'dashboardBp20Fee'
     );
 
+  const dashboardPlasmaFee =
+    document.getElementById(
+      'dashboardPlasmaFee'
+    );
+
 
   if (dashboardBuyRate) {
 
@@ -2616,6 +2663,16 @@ function updateSettingsDisplay(data) {
     dashboardBp20Fee.textContent =
       data
         ? formatUsdt(data.bp20_fee_usdt)
+        : '—';
+
+  }
+
+
+  if (dashboardPlasmaFee) {
+
+    dashboardPlasmaFee.textContent =
+      data
+        ? formatUsdt(data.plasma_fee_usdt)
         : '—';
 
   }
@@ -2699,6 +2756,14 @@ if (settingsForm) {
         );
 
 
+      const plasmaFee =
+        Number(
+          document.getElementById(
+            'plasmaFeeInput'
+          )?.value
+        );
+
+
       const minOrder =
         Number(
           document.getElementById(
@@ -2738,6 +2803,7 @@ if (settingsForm) {
         sellRate,
         trc20Fee,
         bp20Fee,
+        plasmaFee,
         minOrder,
         maxOrder,
         usdtBalance,
@@ -2779,7 +2845,8 @@ if (settingsForm) {
 
       if (
         trc20Fee < 0 ||
-        bp20Fee < 0
+        bp20Fee < 0 ||
+        plasmaFee < 0
       ) {
 
         showAdminMessage(
@@ -2872,6 +2939,9 @@ if (settingsForm) {
           bp20_fee_usdt:
             bp20Fee,
 
+          plasma_fee_usdt:
+            plasmaFee,
+
           usdt_balance:
             usdtBalance,
 
@@ -2940,7 +3010,7 @@ if (settingsForm) {
           await supabaseClient
             .from('app_settings')
             .select(
-              'id,buy_rate,sell_rate,min_order_cfa,max_order_cfa,trc20_fee_usdt,bp20_fee_usdt,usdt_balance,fcfa_balance,updated_at'
+              'id,buy_rate,sell_rate,min_order_cfa,max_order_cfa,trc20_fee_usdt,bp20_fee_usdt,plasma_fee_usdt,usdt_balance,fcfa_balance,updated_at'
             )
             .eq(
               'id',
@@ -3013,6 +3083,11 @@ if (settingsForm) {
             verifyData.bp20_fee_usdt
           );
 
+        const savedPlasma =
+          Number(
+            verifyData.plasma_fee_usdt
+          );
+
         const savedUsdtBalance =
           Number(
             verifyData.usdt_balance
@@ -3031,6 +3106,7 @@ if (settingsForm) {
           savedMax === maxOrder &&
           savedTrc === trc20Fee &&
           savedBp === bp20Fee &&
+          savedPlasma === plasmaFee &&
           savedUsdtBalance === usdtBalance &&
           savedFcfaBalance === fcfaBalance;
 
@@ -3046,6 +3122,7 @@ if (settingsForm) {
               maxOrder,
               trc20Fee,
               bp20Fee,
+              plasmaFee,
               usdtBalance,
               fcfaBalance
             }
@@ -3297,7 +3374,9 @@ function renderOrders() {
                   ? (settings?.trc20_fee_usdt ?? 0)
                   : networkLabel(order.network) === 'BEP20'
                     ? (settings?.bp20_fee_usdt ?? 0)
-                    : 0
+                    : networkLabel(order.network) === 'Plasma (USDT0)'
+                      ? (settings?.plasma_fee_usdt ?? 0)
+                      : 0
               );
 
         const netUsdt =
