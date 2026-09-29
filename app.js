@@ -3398,7 +3398,7 @@ if ($('paymentMethodField')) {
 
   if (
     $('paymentMethod')?.value ===
-    'international'
+    'orange_money_international'
   ) {
 
     $('paymentMethod').value =
@@ -5033,7 +5033,7 @@ function renderPaymentPage() {
 
   const isInternational =
     currentOrder.paymentMethod ===
-    'international';
+    'orange_money_international';
 
   if ($('qrPaymentBox')) {
 
@@ -5072,7 +5072,7 @@ function renderPaymentPage() {
     if ($('paymentDescription')) {
 
       $('paymentDescription').textContent =
-        'Votre commande a été enregistrée. Effectuez maintenant votre paiement international.';
+        'Votre commande a été enregistrée. Effectuez maintenant votre paiement Orange Money International.';
     }
 
     const intlNumber =
@@ -6514,7 +6514,7 @@ function renderOrderCard(
           <span>Montant payé</span>
           <strong>
             ${formatNumber(order.amount_cfa)} FCFA
-          </strong>
+        </strong>
         </div>
 
         <div class="order-row">
@@ -8224,8 +8224,7 @@ async function boot() {
     selectNetwork(
       'trc20'
     );
-
-    updateRatesUI();
+updateRatesUI();
 
     updateCalculator();
 
