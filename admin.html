@@ -3456,7 +3456,13 @@ function renderOrders() {
               <div><strong>Réseau :</strong> ${escapeHtml(networkLabel(order.network))}</div>
               ${
                 side === 'sell'
-                  ? ''
+                  ? `
+                    <div><strong>Numéro pour paiement :</strong> ${
+                      order.payout_phone
+                        ? escapeHtml(order.payout_phone)
+                        : '<span style="color:#c0392b;">Non renseigné</span>'
+                    }</div>
+                  `
                   : `
                     <div><strong>Adresse de réception :</strong> ${
                       order.wallet_address
