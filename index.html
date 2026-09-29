@@ -3418,6 +3418,19 @@ a:hover{
         Wave
       </div>
 
+      <div
+        class="payment-method-row"
+        id="internationalOption"
+        data-value="international"
+        data-icon="🌍"
+        data-icon-color="#f6c945"
+        data-label="Paiement international"
+        style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; cursor: pointer; color: #f6c945; font-weight: 700; border-top: 1px solid #2a8a4d;"
+      >
+        <span style="font-size: 16px;">🌍</span>
+        Paiement international
+      </div>
+
     </div>
 
   </div>
@@ -3655,7 +3668,7 @@ a:hover{
 
           <!-- QR CODE -->
 
-          <div class="payment-qr-box">
+          <div class="payment-qr-box" id="qrPaymentBox">
 
             <div
               class="payment-qr-text"
@@ -3672,7 +3685,38 @@ a:hover{
           </div>
 
 
-          <div class="payment-or">
+          <!-- PAIEMENT INTERNATIONAL (hors Burkina Faso) -->
+
+          <div
+            id="internationalPaymentBox"
+            style="display:none; background:#0b3a1c; border:1px solid #2a8a4d; border-radius:14px; padding:16px; margin-bottom:14px; text-align:center;"
+          >
+
+            <div class="small" style="margin-bottom:8px; opacity:.85;">
+              Envoyez le montant ci-dessus par transfert international
+              (Orange Money / Western Union / MoneyGram, etc.) au numéro :
+            </div>
+
+            <div
+              id="internationalPaymentNumber"
+              style="font-size:20px; font-weight:800; letter-spacing:1px; color:#f6c945; margin-bottom:10px;"
+            >
+              +226 74 60 25 53
+            </div>
+
+            <button
+              type="button"
+              id="copyInternationalNumberBtn"
+              class="btn btn-secondary"
+              style="width:100%;"
+            >
+              Copier le numéro
+            </button>
+
+          </div>
+
+
+          <div class="payment-or" id="paymentOrDivider">
             OU
           </div>
 
