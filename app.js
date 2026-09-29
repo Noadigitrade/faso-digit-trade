@@ -1,4 +1,3 @@
-
 // ============================================================
 // NOA DIGIT TRADE - APP.JS FINAL
 // Supabase Auth + Profiles + Orders + Paiement + Litiges
@@ -6515,14 +6514,7 @@ function renderOrderCard(
           <span>Montant payé</span>
           <strong>
             ${formatNumber(order.amount_cfa)} FCFA
-            </strong>
-        </div>
-
-        <div class="order-row">
-          <span>USDT acheté</span>
-          <strong>
-            ${Number(order.usdt_amount || 0).toFixed(6)} USDT
-          </strong>
+        </strong>
         </div>
 
         <div class="order-row">
@@ -7630,9 +7622,6 @@ async function changePassword(
   const confirmation =
     $('confirmPassword')
       ?.value || '';
-const confirmation =
-    $('confirmPassword')
-      ?.value || '';
 
 
   if (
@@ -8000,15 +7989,7 @@ function setupEvents() {
       toggleWithdrawalFields
     );
 
-
-  $('submitWithdrawalBtn')
-    ?.addEventListener(
-      'click',
-      submitReferralWithdrawal
-    );
-
-
-  $('passwordForm')
+$('passwordForm')
     ?.addEventListener(
       'submit',
       changePassword
@@ -8197,7 +8178,9 @@ async function boot() {
     currentUser =
       data?.session?.user ||
       null;
-       if (currentUser) {
+
+
+    if (currentUser) {
 
       await initializeApplication();
 
