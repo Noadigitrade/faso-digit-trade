@@ -4,7 +4,7 @@
 // cache les fichiers statiques pour un chargement plus rapide.
 // ============================================================
 
-const CACHE_NAME = 'faso-digit-trade-v4';
+const CACHE_NAME = 'faso-digit-trade-v5';
 
 const STATIC_ASSETS = [
   './index.html',
@@ -103,8 +103,8 @@ self.addEventListener('push', (event) => {
 
   const options = {
     body: payload.body || '',
-    icon: './icons/icon-192.png',
-    badge: './icons/icon-192.png',
+    icon: './icons/icon-notif-192.png',
+    badge: './icons/badge-96.png',
     data: payload.url || './admin.html'
   };
 
