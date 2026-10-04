@@ -3513,7 +3513,16 @@ function renderOrders() {
                       Annuler
                     </button>
                   `
-                  : ''
+                  : `
+                    <button
+                      type="button"
+                      class="btn btn-secondary btn-small"
+                      style="color:#c0392b;"
+                      data-delete-order-id="${escapeHtml(order.id)}"
+                    >
+                      🗑 Supprimer
+                    </button>
+                  `
               }
             </div>
           </div>
@@ -3545,6 +3554,21 @@ function renderOrders() {
           function() {
             cancelOrder(
               button.dataset.cancelOrderId
+            );
+          }
+        );
+      }
+    );
+
+  container
+    .querySelectorAll('[data-delete-order-id]')
+    .forEach(
+      function(button) {
+        button.addEventListener(
+          'click',
+          function() {
+            deleteOrder(
+              button.dataset.deleteOrderId
             );
           }
         );
@@ -3904,6 +3928,80 @@ async function cancelOrder(orderId) {
   updateDashboard();
 
   showAdminMessage('Commande annulée.', 'success');
+
+}
+
+
+async function deleteOrder(orderId) {
+
+  const order =
+    allOrders.find(
+      item =>
+        String(item.id) ===
+        String(orderId)
+    );
+
+  if (!order) {
+    showAdminMessage('Commande introuvable.', 'error');
+    return;
+  }
+
+  if (normalizeStatus(order.status) !== 'cancelled') {
+    showAdminMessage(
+      'Annulez d’abord la commande avant de la supprimer.',
+      'error'
+    );
+    return;
+  }
+
+  if (
+    !window.confirm(
+      'Supprimer DÉFINITIVEMENT la commande ' +
+      String(order.id).slice(0, 8) +
+      ' ?\n\nCette action est irréversible.'
+    )
+  ) {
+    return;
+  }
+
+  showAdminMessage('Suppression en cours...', 'info');
+
+  const { data, error } =
+    await supabaseClient
+      .from('orders')
+      .delete()
+      .eq('id', order.id)
+      .select();
+
+  if (error) {
+    console.error('Erreur suppression commande:', error);
+    showAdminMessage(
+      'Impossible de supprimer : ' + error.message,
+      'error'
+    );
+    return;
+  }
+
+  if (!data || !data.length) {
+    showAdminMessage(
+      'Suppression refusée par la base de données (droits manquants).',
+      'error'
+    );
+    return;
+  }
+
+  allOrders =
+    allOrders.filter(
+      item =>
+        String(item.id) !==
+        String(order.id)
+    );
+
+  renderOrders();
+  renderRecentOrders();
+  updateDashboard();
+
+  showAdminMessage('Commande supprimée.', 'success');
 
 }
 
