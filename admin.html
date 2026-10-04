@@ -3500,6 +3500,21 @@ function renderOrders() {
               >
                 Modifier le statut
               </button>
+
+              ${
+                status !== 'cancelled'
+                  ? `
+                    <button
+                      type="button"
+                      class="btn btn-secondary btn-small"
+                      style="color:#c0392b;"
+                      data-cancel-order-id="${escapeHtml(order.id)}"
+                    >
+                      Annuler
+                    </button>
+                  `
+                  : ''
+              }
             </div>
           </div>
         `;
@@ -3515,6 +3530,21 @@ function renderOrders() {
           function() {
             openOrderStatus(
               button.dataset.orderId
+            );
+          }
+        );
+      }
+    );
+
+  container
+    .querySelectorAll('[data-cancel-order-id]')
+    .forEach(
+      function(button) {
+        button.addEventListener(
+          'click',
+          function() {
+            cancelOrder(
+              button.dataset.cancelOrderId
             );
           }
         );
@@ -3797,6 +3827,83 @@ cancelled`,
     'Statut de la commande mis à jour.',
     'success'
   );
+
+}
+
+
+async function cancelOrder(orderId) {
+
+  const order =
+    allOrders.find(
+      item =>
+        String(item.id) ===
+        String(orderId)
+    );
+
+  if (!order) {
+    showAdminMessage('Commande introuvable.', 'error');
+    return;
+  }
+
+  const current =
+    normalizeStatus(order.status);
+
+  if (current === 'cancelled') return;
+
+  const warning =
+    current === 'completed'
+      ? '\n\n⚠️ Cette commande est déjà TERMINÉE.'
+      : '';
+
+  if (
+    !window.confirm(
+      'Annuler la commande ' +
+      String(order.id).slice(0, 8) +
+      ' ?' +
+      warning
+    )
+  ) {
+    return;
+  }
+
+  showAdminMessage('Annulation en cours...', 'info');
+
+  const { data, error } =
+    await supabaseClient
+      .from('orders')
+      .update({
+        status: 'cancelled',
+        updated_at: new Date().toISOString()
+      })
+      .eq('id', order.id)
+      .select()
+      .maybeSingle();
+
+  if (error) {
+    console.error('Erreur annulation commande:', error);
+    showAdminMessage(
+      'Impossible d’annuler : ' + error.message,
+      'error'
+    );
+    return;
+  }
+
+  const index =
+    allOrders.findIndex(
+      item =>
+        String(item.id) ===
+        String(order.id)
+    );
+
+  if (index !== -1 && data) {
+    allOrders[index] = data;
+  }
+
+  renderOrders();
+  renderRecentOrders();
+  updateDashboard();
+
+  showAdminMessage('Commande annulée.', 'success');
 
 }
 
