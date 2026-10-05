@@ -1460,6 +1460,16 @@
           </button>
 
 
+          <button
+            type="button"
+            id="broadcastRateBtn"
+            class="btn btn-secondary"
+            style="margin-top:10px;"
+          >
+            📣 Envoyer le taux du jour aux clients
+          </button>
+
+
           <div class="save-info">
             Les modifications sont enregistrées directement
             dans la configuration administrateur Supabase.
@@ -4044,6 +4054,72 @@ async function cancelOrder(orderId) {
   showAdminMessage('Commande annulée.', 'success');
 
 }
+
+
+async function broadcastRate() {
+
+  const button =
+    document.getElementById('broadcastRateBtn');
+
+  if (
+    !window.confirm(
+      'Envoyer le taux enregistré à tous les clients ayant activé les notifications ?\n\n' +
+      'Pensez à enregistrer vos paramètres avant.'
+    )
+  ) {
+    return;
+  }
+
+  if (button) {
+    button.disabled = true;
+  }
+
+  showAdminMessage('Envoi du taux en cours...', 'info');
+
+  try {
+
+    const { data, error } =
+      await supabaseClient
+        .functions
+        .invoke('hyper-responder');
+
+    if (error) {
+      throw error;
+    }
+
+    showAdminMessage(
+      '✅ Taux envoyé à ' + (data?.sent ?? 0) + ' appareil(s).',
+      'success'
+    );
+
+  } catch (error) {
+
+    console.error('Erreur envoi du taux:', error);
+
+    showAdminMessage(
+      'Impossible d’envoyer le taux : ' +
+      (error.message || 'erreur inconnue'),
+      'error'
+    );
+
+  } finally {
+
+    if (button) {
+      button.disabled = false;
+    }
+  }
+}
+
+
+document.addEventListener(
+  'click',
+  function(event) {
+
+    if (event.target.closest('#broadcastRateBtn')) {
+      broadcastRate();
+    }
+  }
+);
 
 
 async function deleteOrder(orderId) {
