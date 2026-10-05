@@ -4,7 +4,7 @@
 // cache les fichiers statiques pour un chargement plus rapide.
 // ============================================================
 
-const CACHE_NAME = 'faso-digit-trade-v5';
+const CACHE_NAME = 'faso-digit-trade-v6';
 
 const STATIC_ASSETS = [
   './index.html',
@@ -141,8 +141,12 @@ self.addEventListener('notificationclick', (event) => {
       .matchAll({ type: 'window', includeUncontrolled: true })
       .then((clientList) => {
 
+        const isAdminTarget = String(targetUrl).includes('admin.html');
+
         for (const client of clientList) {
-          if (client.url.includes('admin.html') && 'focus' in client) {
+          const isAdminClient = client.url.includes('admin.html');
+
+          if (isAdminClient === isAdminTarget && 'focus' in client) {
             return client.focus();
           }
         }
