@@ -1,1 +1,1 @@
-# Noa-digit-trade
+# Noa-digit-trade Application d'échange USDT.
