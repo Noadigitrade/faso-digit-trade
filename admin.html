@@ -1462,11 +1462,21 @@
 
           <button
             type="button"
-            id="broadcastRateBtn"
+            id="broadcastSellBtn"
             class="btn btn-secondary"
             style="margin-top:10px;"
           >
-            📣 Envoyer le taux du jour aux clients
+            📣 Alerte VENTE : « Vendez vos USDT à… »
+          </button>
+
+
+          <button
+            type="button"
+            id="broadcastBuyBtn"
+            class="btn btn-secondary"
+            style="margin-top:10px;"
+          >
+            📣 Alerte ACHAT : « Achetez vos USDT à… »
           </button>
 
 
@@ -4056,15 +4066,29 @@ async function cancelOrder(orderId) {
 }
 
 
-async function broadcastRate() {
+async function broadcastRate(mode) {
+
+  const isSell =
+    mode === 'sell';
 
   const button =
-    document.getElementById('broadcastRateBtn');
+    document.getElementById(
+      isSell
+        ? 'broadcastSellBtn'
+        : 'broadcastBuyBtn'
+    );
+
+  const label =
+    isSell
+      ? "VENTE (« Vendez vos USDT à… »)"
+      : "ACHAT (« Achetez vos USDT à… »)";
 
   if (
     !window.confirm(
-      'Envoyer le taux enregistré à tous les clients ayant activé les notifications ?\n\n' +
-      'Pensez à enregistrer vos paramètres avant.'
+      'Envoyer l\'alerte ' + label +
+      ' à tous les clients ayant activé les notifications ?\n\n' +
+      'Pensez à enregistrer vos paramètres avant : ' +
+      'le taux envoyé est celui qui est enregistré.'
     )
   ) {
     return;
@@ -4074,21 +4098,24 @@ async function broadcastRate() {
     button.disabled = true;
   }
 
-  showAdminMessage('Envoi du taux en cours...', 'info');
+  showAdminMessage('Envoi en cours...', 'info');
 
   try {
 
     const { data, error } =
       await supabaseClient
         .functions
-        .invoke('hyper-responder');
+        .invoke(
+          'hyper-responder',
+          { body: { mode: isSell ? 'sell' : 'buy' } }
+        );
 
     if (error) {
       throw error;
     }
 
     showAdminMessage(
-      '✅ Taux envoyé à ' + (data?.sent ?? 0) + ' appareil(s).',
+      '✅ Alerte envoyée à ' + (data?.sent ?? 0) + ' appareil(s).',
       'success'
     );
 
@@ -4097,7 +4124,7 @@ async function broadcastRate() {
     console.error('Erreur envoi du taux:', error);
 
     showAdminMessage(
-      'Impossible d’envoyer le taux : ' +
+      'Impossible d’envoyer l’alerte : ' +
       (error.message || 'erreur inconnue'),
       'error'
     );
@@ -4115,8 +4142,12 @@ document.addEventListener(
   'click',
   function(event) {
 
-    if (event.target.closest('#broadcastRateBtn')) {
-      broadcastRate();
+    if (event.target.closest('#broadcastSellBtn')) {
+      broadcastRate('sell');
+    }
+
+    if (event.target.closest('#broadcastBuyBtn')) {
+      broadcastRate('buy');
     }
   }
 );
