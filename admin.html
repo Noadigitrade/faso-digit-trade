@@ -3330,6 +3330,111 @@ async function loadOrders() {
 
 }
 
+const WHATSAPP_COUNTRIES = {
+  'Burkina Faso': { code: '226', digits: 8 },
+  "Côte d'Ivoire": { code: '225', digits: 10 },
+  'Mali': { code: '223', digits: 8 },
+  'Sénégal': { code: '221', digits: 9 }
+};
+
+
+function whatsappLink(phone, country, text) {
+
+  let digits =
+    String(phone || '').replace(/\D/g, '');
+
+  if (!digits) return '';
+
+  if (digits.startsWith('00')) {
+    digits = digits.slice(2);
+  }
+
+  const config =
+    WHATSAPP_COUNTRIES[country];
+
+  // numéro local sans indicatif : on ajoute celui du pays
+  if (config && digits.length === config.digits) {
+    digits = config.code + digits;
+  }
+
+  return (
+    'https://wa.me/' + digits +
+    (text ? '?text=' + encodeURIComponent(text) : '')
+  );
+}
+
+
+function userWhatsappLink(user) {
+
+  const firstName =
+    String(user.full_name || '').trim().split(/\s+/)[0];
+
+  const href =
+    whatsappLink(
+      user.phone,
+      user.country,
+      'Bonjour ' + (firstName || '') +
+      ', ici FASO DIGIT TRADE. '
+    );
+
+  if (!href) return '';
+
+  return `
+    <a
+      href="${escapeHtml(href)}"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="margin-left:6px;text-decoration:none;"
+      title="Écrire sur WhatsApp"
+    >💬</a>
+  `;
+}
+
+
+function orderWhatsappButton(order) {
+
+  const user =
+    allUsers.find(
+      item =>
+        String(item.id) ===
+        String(order.user_id)
+    );
+
+  if (!user || !user.phone) return '';
+
+  const firstName =
+    String(user.full_name || '').trim().split(/\s+/)[0];
+
+  const type =
+    order.side === 'sell'
+      ? 'vente'
+      : 'achat';
+
+  const href =
+    whatsappLink(
+      user.phone,
+      user.country,
+      'Bonjour ' + (firstName || '') +
+      ', ici FASO DIGIT TRADE. Concernant votre commande de ' +
+      type + ' de ' + (order.usdt_amount ?? '') + ' USDT : '
+    );
+
+  if (!href) return '';
+
+  return `
+    <a
+      class="btn btn-secondary btn-small"
+      href="${escapeHtml(href)}"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="text-decoration:none;"
+    >
+      💬 WhatsApp
+    </a>
+  `;
+}
+
+
 function renderOrders() {
 
   const container =
@@ -3520,6 +3625,8 @@ function renderOrders() {
               >
                 Modifier le statut
               </button>
+
+              ${orderWhatsappButton(order)}
 
               ${
                 status !== 'cancelled'
@@ -4429,6 +4536,8 @@ async function loadUsers() {
 
   renderUsers();
 
+  renderOrders();
+
 }
 
 
@@ -4479,6 +4588,7 @@ function renderUsers() {
               ${escapeHtml(
                 user.phone || '—'
               )}
+              ${userWhatsappLink(user)}
             </td>
 
             <td>
